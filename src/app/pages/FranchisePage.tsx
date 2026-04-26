@@ -86,7 +86,7 @@ export function FranchisePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#f3f3f3] pb-10 pt-24">
+      <section className="relative overflow-hidden bg-[#f3f3f3] pb-10 pt-6 sm:pt-8">
         <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-[#f5b49f]/30 blur-3xl" />
         <div className="pointer-events-none absolute -right-16 top-6 h-80 w-80 rounded-full bg-[#f6d8a2]/35 blur-3xl" />
 
@@ -95,9 +95,9 @@ export function FranchisePage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]"
+            className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(420px,0.85fr)] lg:items-center lg:gap-12 xl:gap-16"
           >
-            <div>
+            <div className="max-w-3xl">
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#e3cfc8] bg-white/75 px-4 py-1 text-xs font-semibold tracking-[0.18em] text-[#b45f4f]">
                 FRANCHISE OPPORTUNITY
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#cf5c4a]" />
@@ -123,7 +123,7 @@ export function FranchisePage() {
                 <span className="rounded-full border border-[#e4d4ce] bg-white px-4 py-2">30+ Franchise Stores</span>
               </div>
 
-              <div className="mt-8 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {pillars.map((pillar, idx) => {
                   const Icon = pillar.icon;
 
@@ -150,13 +150,13 @@ export function FranchisePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="relative mt-8 lg:mt-[13.5rem] lg:pt-0"
+              className="relative mt-2 lg:mt-0 lg:self-center"
             >
               <div className="absolute -left-6 top-10 hidden h-28 w-28 rounded-full bg-[#f4c9b8]/35 blur-3xl lg:block" />
               <div className="absolute -right-6 bottom-10 hidden h-32 w-32 rounded-full bg-[#f6d8a2]/35 blur-3xl lg:block" />
 
-              <div className="relative mx-auto w-full max-w-[29rem]">
-                <div className="grid grid-cols-1 gap-2">
+              <div className="relative mx-auto w-full max-w-[29rem] lg:ml-auto">
+                <div className="grid grid-cols-1 gap-3">
                   {[
                     'https://thecakecarnival.podcaststudiopune.com/video/bhosariu-%20franchise%20owner.mp4',
                     'https://thecakecarnival.podcaststudiopune.com/video/Ravet%20-%20franchise%20owner.mp4',
@@ -189,7 +189,7 @@ export function FranchisePage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f3f3] pb-24 pt-8">
+      <section className="bg-[#f3f3f3] pb-24 pt-6">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
             <div className="space-y-8">

@@ -98,94 +98,101 @@ export function HeroVideo() {
         <CarouselContent>
           {heroSlides.map((slide, idx) => (
             <CarouselItem key={slide.src}>
-              <div className="mx-auto grid min-h-[620px] max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-10 pt-24 lg:grid-cols-2 lg:pb-12 lg:pt-28">
-                <motion.div
-                  className="relative z-10 max-w-xl"
-                  initial={false}
-                  animate={{ opacity: selectedIndex === idx ? 1 : 0.55, y: selectedIndex === idx ? 0 : 12 }}
-                  transition={{ duration: 0.45, ease: 'easeOut' }}
-                >
-                  <motion.p
-                    className="pointer-events-none absolute -top-16 left-0 text-7xl text-[#e8dbd5]/60 md:text-8xl"
-                    style={{ fontFamily: 'var(--font-script)' }}
-                    initial={false}
-                    animate={{ x: selectedIndex === idx ? 0 : 8, opacity: selectedIndex === idx ? 1 : 0.45 }}
-                    transition={{ duration: 0.5, ease: 'easeOut' }}
-                  >
-                    {slide.titleTop}
-                  </motion.p>
-
-                  <h1
-                    className="relative text-[3.45rem] leading-[0.97] text-[#141414] md:text-[5rem]"
-                    style={{ fontFamily: 'var(--font-editorial)', fontWeight: 600, letterSpacing: '-0.02em' }}
-                  >
-                    {slide.title}
-                  </h1>
-
-                  <p className="mt-5 max-w-md text-base leading-relaxed text-[#4f4a46]">{slide.description}</p>
-
+              <div
+                className="relative z-10 mx-auto max-w-7xl px-6 pb-12 pt-20 sm:pb-16 sm:pt-24 md:pt-28 lg:pb-20 lg:pt-32"
+                style={{
+                  background: `linear-gradient(to right, #f5efec 0%, #f5efec 40%, transparent 70%), linear-gradient(to top, #f5efec 0%, transparent 50%)`,
+                }}
+              >
+                <div className="relative grid items-center gap-12 lg:min-h-[620px] lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-16">
                   <motion.div
-                    className="mt-7 max-w-sm rounded-2xl border border-black/5 bg-white/70 p-4 shadow-[0_18px_40px_rgba(0,0,0,0.08)] backdrop-blur-sm"
-                    style={{ boxShadow: `0 18px 40px ${slide.softAccent}` }}
+                    className="relative z-10 max-w-xl"
                     initial={false}
-                    animate={{ scale: selectedIndex === idx ? 1 : 0.97, y: selectedIndex === idx ? 0 : 8 }}
-                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    animate={{ opacity: selectedIndex === idx ? 1 : 0.55, y: selectedIndex === idx ? 0 : 12 }}
+                    transition={{ duration: 0.45, ease: 'easeOut' }}
                   >
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3f3b37]">{slide.offerLabel}</span>
+                    <motion.p
+                      className="pointer-events-none absolute -top-16 left-0 text-7xl text-[#e8dbd5]/60 md:text-8xl"
+                      style={{ fontFamily: 'var(--font-script)' }}
+                      initial={false}
+                      animate={{ x: selectedIndex === idx ? 0 : 8, opacity: selectedIndex === idx ? 1 : 0.45 }}
+                      transition={{ duration: 0.5, ease: 'easeOut' }}
+                    >
+                      {slide.titleTop}
+                    </motion.p>
+
+                    <h1
+                      className="relative text-[3.45rem] leading-[0.97] text-[#141414] md:text-[5rem]"
+                      style={{ fontFamily: 'var(--font-editorial)', fontWeight: 600, letterSpacing: '-0.02em' }}
+                    >
+                      {slide.title}
+                    </h1>
+
+                    <p className="mt-5 max-w-md text-base leading-relaxed text-[#4f4a46]">{slide.description}</p>
+
+                    <motion.div
+                      className="mt-7 max-w-sm rounded-2xl border border-black/5 bg-white/70 p-4 shadow-[0_18px_40px_rgba(0,0,0,0.08)] backdrop-blur-sm"
+                      style={{ boxShadow: `0 18px 40px ${slide.softAccent}` }}
+                      initial={false}
+                      animate={{ scale: selectedIndex === idx ? 1 : 0.97, y: selectedIndex === idx ? 0 : 8 }}
+                      transition={{ duration: 0.35, ease: 'easeOut' }}
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3f3b37]">{slide.offerLabel}</span>
+                        <motion.span
+                          className="inline-flex h-2.5 w-2.5 rounded-full"
+                          style={{ backgroundColor: slide.accent }}
+                          animate={{ scale: [1, 1.3, 1], opacity: [0.75, 1, 0.75] }}
+                          transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+                      </div>
+                      <div className="mt-2 text-2xl font-extrabold tracking-tight" style={{ color: slide.accent }}>
+                        {slide.offerValue}
+                      </div>
+                      <p className="mt-1 text-sm text-[#5f5a56]">{slide.offerNote}</p>
+                    </motion.div>
+
+                    <Link
+                      to="/products"
+                      className="mt-7 inline-flex items-center justify-center rounded-full px-9 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.03]"
+                      style={{
+                        backgroundColor: slide.accent,
+                        boxShadow: `0 14px 30px ${slide.softAccent}`,
+                      }}
+                    >
+                      Explore Menu
                       <motion.span
-                        className="inline-flex h-2.5 w-2.5 rounded-full"
-                        style={{ backgroundColor: slide.accent }}
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.75, 1, 0.75] }}
-                        transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
-                      />
-                    </div>
-                    <div className="mt-2 text-2xl font-extrabold tracking-tight" style={{ color: slide.accent }}>
-                      {slide.offerValue}
-                    </div>
-                    <p className="mt-1 text-sm text-[#5f5a56]">{slide.offerNote}</p>
+                        className="ml-2 inline-block"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                      >
+                        {'->'}
+                      </motion.span>
+                    </Link>
                   </motion.div>
 
-                  <Link
-                    to="/products"
-                    className="mt-7 inline-flex items-center justify-center rounded-full px-9 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.03]"
-                    style={{
-                      backgroundColor: slide.accent,
-                      boxShadow: `0 14px 30px ${slide.softAccent}`,
-                    }}
-                  >
-                    Explore Menu
-                    <motion.span
-                      className="ml-2 inline-block"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                  <div className="relative z-10 mx-auto w-full max-w-[600px] lg:max-w-none">
+                    <div
+                      className="relative mx-auto aspect-square w-full max-w-[620px] overflow-hidden rounded-full bg-white/50 shadow-[0_25px_70px_rgba(56,28,15,0.2)] lg:ml-auto"
+                      style={{ boxShadow: `0 26px 65px ${slide.softAccent}` }}
                     >
-                      {'->'}
-                    </motion.span>
-                  </Link>
-                </motion.div>
-
-                <div className="relative z-10 mx-auto w-full max-w-[600px] lg:max-w-none">
-                  <div
-                    className="relative ml-auto aspect-square w-full max-w-[620px] overflow-hidden rounded-full bg-white/50 shadow-[0_25px_70px_rgba(56,28,15,0.2)]"
-                    style={{ boxShadow: `0 26px 65px ${slide.softAccent}` }}
-                  >
-                    <motion.img
-                      src={slide.src}
-                      alt={slide.alt}
-                      className="h-full w-full object-cover"
-                      initial={false}
-                      animate={{ scale: selectedIndex === idx ? 1.04 : 1 }}
-                      transition={{ duration: 0.7, ease: 'easeOut' }}
-                    />
-                    <motion.div
-                      className="absolute right-16 top-20 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white"
-                      style={{ backgroundColor: slide.accent }}
-                      animate={{ y: [0, -6, 0] }}
-                      transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-                    >
-                      Special Offer
-                    </motion.div>
+                      <motion.img
+                        src={slide.src}
+                        alt={slide.alt}
+                        className="h-full w-full object-cover"
+                        initial={false}
+                        animate={{ scale: selectedIndex === idx ? 1.04 : 1 }}
+                        transition={{ duration: 0.7, ease: 'easeOut' }}
+                      />
+                      <motion.div
+                        className="absolute right-16 top-20 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white"
+                        style={{ backgroundColor: slide.accent }}
+                        animate={{ y: [0, -6, 0] }}
+                        transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+                      >
+                        Special Offer
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>

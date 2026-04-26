@@ -43,7 +43,7 @@ export function About() {
   }, [carouselApi]);
 
   return (
-    <section id="about" className="bg-[#f3f3f3] pb-24 pt-24 sm:pt-28 lg:pt-24">
+    <section id="about" className="bg-[#f3f3f3] pb-24 pt-6 sm:pt-8">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8">
           <motion.div

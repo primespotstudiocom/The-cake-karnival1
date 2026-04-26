@@ -214,14 +214,8 @@ export function StoreLocatorPage() {
   }, [query]);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#fff7f5] via-[#f7f7f7] to-[#f3f3f3] py-24">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-20 -top-20 size-[320px] rounded-full bg-[#cf5c4a]/12 blur-3xl" />
-        <div className="absolute -right-24 top-24 size-[420px] rounded-full bg-black/5 blur-3xl" />
-        <div className="absolute left-1/2 top-[520px] size-[520px] -translate-x-1/2 rounded-full bg-[#cf5c4a]/8 blur-3xl" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6">
+    <section className="bg-[#f3f3f3] pb-16 pt-6 sm:pt-8 lg:pb-20">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

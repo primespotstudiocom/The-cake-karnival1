@@ -25,10 +25,10 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="absolute top-0 inset-x-0 z-50 bg-transparent"
     >
-      <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 sm:py-4">
+      <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 sm:py-3">
         <div className="flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-x-8 lg:gap-x-12">
           {/* Left Menu */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-10 justify-end">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 justify-end">
             {leftItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -52,7 +52,7 @@ export function Navbar() {
           {/* Center Brand */}
           <div className="flex items-center justify-center md:justify-center">
             <NavLink to="/" className="inline-flex">
-              <img src="/logo.png" alt="The Cake Carnival" className="h-11 w-auto object-contain sm:h-12 md:h-[4.5rem] lg:h-20" />
+              <img src="/logo.png" alt="The Cake Carnival" className="h-10 w-auto object-contain sm:h-11 md:h-14 lg:h-16" />
             </NavLink>
           </div>
 
@@ -67,7 +67,7 @@ export function Navbar() {
           </button>
 
           {/* Right Menu */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-10 justify-start">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 justify-start">
             {rightItems.map((item) => (
               <NavLink
                 key={item.to}

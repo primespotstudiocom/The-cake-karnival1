@@ -117,7 +117,7 @@ export function ImageGrid() {
   }, [hoveredIndex]);
 
   return (
-    <section id="photo-gallery" className="bg-[#f3f3f3] py-20">
+    <section id="photo-gallery" className="bg-[#f3f3f3] pb-16 pt-6 sm:pt-8 lg:pb-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="relative mb-10 overflow-hidden rounded-3xl border border-[#e7ddd7] bg-gradient-to-r from-[#fff9f7] via-[#fffdfb] to-[#fff6ef] px-6 py-8 sm:px-8">
           <div className="pointer-events-none absolute -left-12 -top-12 h-40 w-40 rounded-full bg-[#ffd8c8]/50 blur-3xl" />
