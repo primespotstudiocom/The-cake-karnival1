@@ -158,9 +158,9 @@ export function FranchisePage() {
               <div className="relative mx-auto w-full max-w-[29rem]">
                 <div className="grid grid-cols-1 gap-2">
                   {[
-                    'https://thecakekarnival.podcaststudiopune.com/video/bhosariu-%20franchise%20owner.mp4',
-                    'https://thecakekarnival.podcaststudiopune.com/video/Ravet%20-%20franchise%20owner.mp4',
-                    'https://thecakekarnival.podcaststudiopune.com/video/wakad%20-%20franchise%20owner.mp4',
+                    'https://thecakecarnival.podcaststudiopune.com/video/bhosariu-%20franchise%20owner.mp4',
+                    'https://thecakecarnival.podcaststudiopune.com/video/Ravet%20-%20franchise%20owner.mp4',
+                    'https://thecakecarnival.podcaststudiopune.com/video/wakad%20-%20franchise%20owner.mp4',
                   ].map((videoSrc) => (
                     <button
                       key={videoSrc}
