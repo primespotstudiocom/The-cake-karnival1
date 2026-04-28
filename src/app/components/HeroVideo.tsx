@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from './ui/
 export function HeroVideo() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const slideIntervalMs = 1500;
+  const slideIntervalMs = 4000;
 
   const heroSlides = useMemo(
     () => [
@@ -94,7 +94,7 @@ export function HeroVideo() {
           'radial-gradient(circle at 18% 90%, rgba(236, 102, 44, 0.14), transparent 30%), radial-gradient(circle at 86% 16%, rgba(244, 163, 116, 0.12), transparent 30%)',
       }}
     >
-      <Carousel setApi={setCarouselApi} opts={{ loop: true }} className="w-full">
+      <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 55 }} className="w-full">
         <CarouselContent>
           {heroSlides.map((slide, idx) => (
             <CarouselItem key={slide.src}>

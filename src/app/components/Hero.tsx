@@ -49,7 +49,7 @@ export function Hero() {
     if (!carouselApi) return;
     const id = window.setInterval(() => {
       carouselApi.scrollNext();
-    }, 3200);
+    }, 4000);
     return () => window.clearInterval(id);
   }, [carouselApi]);
 
@@ -133,7 +133,7 @@ export function Hero() {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/25 aspect-[3/4] max-w-sm mx-auto lg:max-w-none">
-              <Carousel setApi={setCarouselApi} opts={{ loop: true }} className="h-full">
+              <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 35 }} className="h-full">
                 <CarouselContent className="h-full">
                   {heroImages.map((src, idx) => (
                     <CarouselItem key={`${src}-${idx}`} className="h-full">

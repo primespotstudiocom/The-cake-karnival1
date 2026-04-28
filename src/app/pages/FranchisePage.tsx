@@ -1,9 +1,8 @@
 import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   BadgeCheck,
   ClipboardList,
-  Expand,
   FileSpreadsheet,
   Mail,
   MapPin,
@@ -19,7 +18,18 @@ export function FranchisePage() {
   const supportNumber = '8793773867';
   const crmUrl =
     'https://docs.google.com/spreadsheets/d/1rfpKfYham04u5SMGoYCt_-ZbXtHC4f7fNoYx_oyXqBc/edit?gid=0#gid=0';
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const getYouTubeEmbedSrc = (embedUrl: string) => {
+    try {
+      const url = new URL(embedUrl);
+      url.searchParams.set('modestbranding', '1');
+      url.searchParams.set('controls', '1');
+      url.searchParams.set('rel', '0');
+      return url.toString();
+    } catch {
+      return embedUrl;
+    }
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -53,19 +63,6 @@ export function FranchisePage() {
     { title: 'Setup', text: 'Store design, equipment setup, and hiring/training support.' },
     { title: 'Launch', text: 'Grand opening with campaign and performance tracking.' },
   ];
-
-  useEffect(() => {
-    if (!activeVideo) return;
-
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setActiveVideo(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
-  }, [activeVideo]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,29 +155,25 @@ export function FranchisePage() {
               <div className="relative mx-auto w-full max-w-[29rem] lg:ml-auto">
                 <div className="grid grid-cols-1 gap-3">
                   {[
-                    'https://thecakecarnival.podcaststudiopune.com/video/bhosariu-%20franchise%20owner.mp4',
-                    'https://thecakecarnival.podcaststudiopune.com/video/Ravet%20-%20franchise%20owner.mp4',
-                    'https://thecakecarnival.podcaststudiopune.com/video/wakad%20-%20franchise%20owner.mp4',
+                    'https://www.youtube.com/embed/pMlSK0K8SWA?si=GJcH2nYVe0YlfGUU',
+                    'https://www.youtube.com/embed/8hBye4svme8?si=gsAlHXFHgYgC-e6z',
+                    'https://www.youtube.com/embed/fuEcgmkNWIA?si=Ql1at2JF-fH9QohP',
                   ].map((videoSrc) => (
-                    <button
+                    <div
                       key={videoSrc}
-                      type="button"
-                      onClick={() => setActiveVideo(videoSrc)}
-                      className="group relative overflow-hidden rounded-[1.25rem] text-left"
+                      className="overflow-hidden rounded-[1.25rem] border border-[#e7ddd8] bg-white/70 shadow-[0_14px_30px_rgba(25,16,10,0.06)] ring-1 ring-black/5"
                     >
-                      <video
-                        className="h-[8.75rem] w-full rounded-[1.25rem] bg-black object-cover sm:h-[9.5rem] lg:h-[9.75rem]"
-                        src={videoSrc}
-                        muted
-                        playsInline
-                        preload="metadata"
+                      <iframe
+                        className="h-[11rem] w-full bg-black sm:h-[12.5rem] lg:h-[13.5rem]"
+                        src={getYouTubeEmbedSrc(videoSrc)}
+                        title="YouTube video player"
+                        frameBorder={0}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        loading="lazy"
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90 transition-opacity group-hover:opacity-100" />
-                      <div className="pointer-events-none absolute right-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold tracking-[0.14em] text-[#1f1f1f] uppercase">
-                        <Expand className="h-3.5 w-3.5" />
-                        Open
-                      </div>
-                    </button>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -424,33 +417,6 @@ export function FranchisePage() {
         </div>
       </section>
 
-      {activeVideo ? (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/75 px-4 py-8 backdrop-blur-sm"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-[2rem] bg-[#111] p-3 shadow-[0_22px_70px_rgba(0,0,0,0.45)]"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setActiveVideo(null)}
-              className="absolute right-5 top-5 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1f1f1f] shadow-sm transition-colors hover:bg-white"
-              aria-label="Close video"
-            >
-              x
-            </button>
-            <video
-              className="max-h-[80vh] w-full rounded-[1.5rem] bg-black"
-              src={activeVideo}
-              controls
-              autoPlay
-              playsInline
-            />
-          </div>
-        </div>
-      ) : null}
     </>
   );
 }

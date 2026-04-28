@@ -1,4 +1,4 @@
-﻿import { motion } from 'motion/react';
+﻿import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
@@ -32,15 +32,15 @@ export function HotSelling({ variant = 'default' }: HotSellingProps) {
         const currentIndex = order.indexOf(prev);
         return order[(currentIndex + 1) % order.length];
       });
-    }, 2000);
+    }, 4000);
 
     return () => window.clearInterval(id);
   }, [isUserSelected]);
 
   const visibleProducts = useMemo(() => {
-    if (activeTab === 'best') return products.slice(2, 6);
-    if (activeTab === 'top') return products.slice(4, 8);
-    return products.slice(0, 4);
+    if (activeTab === 'best') return products.slice(2).concat(products.slice(0, 2));
+    if (activeTab === 'top') return products.slice(4).concat(products.slice(0, 4));
+    return products;
   }, [activeTab]);
 
   return (
@@ -103,33 +103,42 @@ export function HotSelling({ variant = 'default' }: HotSellingProps) {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
-          {visibleProducts.map((product, index) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -6 }}
-              className="group mx-auto w-full max-w-[240px] cursor-pointer"
-            >
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(20,20,20,0.08)] ring-1 ring-black/5">
-                <ImageWithFallback
-                  src={product.image}
-                  alt={product.name}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-                />
-              </div>
-              <div className="pt-2 text-center">
-                <h3 className="text-[1.65rem] font-semibold leading-tight text-[#171717]">{product.name}</h3>
-                <p className="mt-0.5 text-sm leading-relaxed text-[#6f6f6f]">
-                  Freshly baked and beautifully crafted for every celebration.
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+          >
+            {visibleProducts.map((product, index) => (
+              <motion.div
+                key={product.id}
+                layout
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.04, duration: 0.45, ease: 'easeOut' }}
+                whileHover={{ y: -6 }}
+                className="group mx-auto w-full max-w-[240px] cursor-pointer"
+              >
+                <div className="aspect-square overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(20,20,20,0.08)] ring-1 ring-black/5">
+                  <ImageWithFallback
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  />
+                </div>
+                <div className="pt-2 text-center">
+                  <h3 className="text-[1.65rem] font-semibold leading-tight text-[#171717]">{product.name}</h3>
+                  <p className="mt-0.5 text-sm leading-relaxed text-[#6f6f6f]">
+                    Freshly baked and beautifully crafted for every celebration.
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

@@ -37,11 +37,9 @@ export function Footer() {
   return (
     <footer id="contact" className="border-t border-[#e4e4e4] bg-[#f3f3f3]">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 border border-[#e6e6e6] bg-white p-8 shadow-[0_10px_30px_rgba(10,10,10,0.04)] md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-12 border border-[#e6e6e6] bg-white p-8 shadow-[0_10px_30px_rgba(10,10,10,0.04)] md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <h1 className="mb-4 text-2xl font-bold text-primary" style={{ fontFamily: 'var(--font-editorial)' }}>
-              The Cake Carnival
-            </h1>
+            <img src="/logo.png" alt="The Cake Carnival" className="mb-4 h-12 w-auto object-contain" />
             <p className="mb-6 leading-relaxed text-muted-foreground">
               Crafting premium baked goods with traditional methods and the finest ingredients since 2015.
             </p>
@@ -49,15 +47,15 @@ export function Footer() {
             <div className="mb-6 space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
-                <span>123 Main Street, Downtown</span>
+                <span>123, MG Road, Koregaon Park, Pune, Maharashtra - 411001</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
-                <span>(555) 123-4567</span>
+                <span>WhatsApp: 9009003867</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="h-5 w-5 flex-shrink-0 text-primary" />
-                <span>hello@artisanbakery.com</span>
+                <span>Support Number: 8793773867</span>
               </div>
             </div>
 
