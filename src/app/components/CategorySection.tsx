@@ -6,23 +6,23 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 const categories = [
   {
     name: 'Birthday Cakes',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg'),
   },
   {
     name: 'Designer Cakes',
-    image: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=600&q=80',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg'),
   },
   {
     name: 'Chocolate Cakes',
-    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=600&q=80',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg'),
   },
   {
     name: 'Anniversary Cakes',
-    image: 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=600&q=80',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (1).jpeg'),
   },
   {
     name: 'Customized Cakes',
-    image: encodeURI('/customize/WhatsApp Image 2026-04-30 at 2.50.35 PM.jpeg'),
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM.jpeg'),
   },
 ];
 
