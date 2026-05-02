@@ -12,6 +12,7 @@ type FormState = {
 const STORAGE_CLOSE_COUNT = 'tcc_franchise_popup_close_count';
 const STORAGE_NEXT_SHOW_AT = 'tcc_franchise_popup_next_show_at';
 const TWO_MINUTES_MS = 2 * 60 * 1000;
+const POPUP_DELAY_MS = 30 * 1000;
 
 function getNumberFromStorage(key: string) {
   const raw = window.localStorage.getItem(key);
@@ -46,7 +47,8 @@ export function FranchiseInquiryPopup() {
     const nextShowAt = getNumberFromStorage(STORAGE_NEXT_SHOW_AT) ?? 0;
     if (Date.now() < nextShowAt) return;
 
-    setIsOpen(true);
+    const timeoutId = window.setTimeout(() => setIsOpen(true), POPUP_DELAY_MS);
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
@@ -201,4 +203,3 @@ export function FranchiseInquiryPopup() {
     </div>
   );
 }
-
