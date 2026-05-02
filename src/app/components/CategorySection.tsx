@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const categories = [
@@ -81,6 +81,13 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
   const customizeTrackRef = useRef<HTMLDivElement | null>(null);
   const [customizeActiveIndex, setCustomizeActiveIndex] = useState(0);
   const [isCustomizePaused, setIsCustomizePaused] = useState(false);
+  const showcaseCount = 10;
+
+  const customizeShowcase = useMemo(() => {
+    if (!customizeGallery.length) return [];
+    const count = Math.min(showcaseCount, customizeGallery.length);
+    return Array.from({ length: count }, (_, i) => customizeGallery[(customizeActiveIndex + i) % customizeGallery.length]);
+  }, [customizeActiveIndex, customizeGallery]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -102,8 +109,16 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
     const target = items[customizeActiveIndex];
     if (!target) return;
 
-    track.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    track.scrollTo({ left: target.offsetLeft - 8, behavior: 'smooth' });
   }, [customizeActiveIndex]);
+
+  const goCustomizePrev = () => {
+    setCustomizeActiveIndex((prev) => (prev - 1 + customizeGallery.length) % customizeGallery.length);
+  };
+
+  const goCustomizeNext = () => {
+    setCustomizeActiveIndex((prev) => (prev + 1) % customizeGallery.length);
+  };
 
   const customizeWhatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     'Hi! I want to order a Customized Cake.',
@@ -147,12 +162,14 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
           })}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-border/60 bg-card/40 p-6 shadow-lg shadow-black/5 backdrop-blur-xl supports-[backdrop-filter]:bg-card/30">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="relative mt-10 overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-b from-white/70 via-white/55 to-white/40 p-6 shadow-[0_22px_50px_rgba(20,20,20,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/35 md:p-8">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(207,92,74,0.10),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(255,179,92,0.10),transparent_55%)]" />
+
+          <div className="relative flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-semibold tracking-[0.24em] text-muted-foreground">CUSTOMIZED CAKES</p>
-              <h3 className="mt-2 text-2xl font-semibold text-card-foreground">Make it personal</h3>
-              <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+              <h3 className="mt-2 text-3xl font-semibold leading-tight text-card-foreground">Make it personal</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 Share your theme, photo, and weight — we’ll craft it exactly the way you want.
               </p>
             </div>
@@ -167,28 +184,75 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
             </a>
           </div>
 
-          <div
-            ref={customizeTrackRef}
-            className="mt-6 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            onMouseEnter={() => setIsCustomizePaused(true)}
-            onMouseLeave={() => setIsCustomizePaused(false)}
-            onFocus={() => setIsCustomizePaused(true)}
-            onBlur={() => setIsCustomizePaused(false)}
-          >
-            {customizeGallery.map((src) => (
-              <div
-                key={src}
-                data-customize-slide="true"
-                className="group relative aspect-square w-[min(72vw,260px)] shrink-0 snap-start overflow-hidden rounded-2xl bg-white shadow-[0_12px_28px_rgba(20,20,20,0.08)] ring-1 ring-black/5"
-              >
-                <ImageWithFallback
-                  src={src}
-                  alt="Customized cake"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                  loading="lazy"
-                />
+          {/* Images carousel */}
+          <div className="relative mt-6">
+            <div
+              ref={customizeTrackRef}
+              className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              onMouseEnter={() => setIsCustomizePaused(true)}
+              onMouseLeave={() => setIsCustomizePaused(false)}
+              onTouchStart={() => setIsCustomizePaused(true)}
+              onTouchEnd={() => setIsCustomizePaused(false)}
+              onFocus={() => setIsCustomizePaused(true)}
+              onBlur={() => setIsCustomizePaused(false)}
+            >
+              {customizeGallery.map((src) => (
+                <div
+                  key={src}
+                  data-customize-slide="true"
+                  className="group relative aspect-[3/4] w-60 shrink-0 snap-start overflow-hidden rounded-3xl bg-white shadow-lg shadow-black/10 ring-1 ring-black/5"
+                >
+                  <ImageWithFallback
+                    src={src}
+                    alt="Customized cake"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {customizeGallery.length > 1 ? (
+              <div className="mt-6 flex items-center justify-between gap-4 px-5">
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={goCustomizePrev}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-white/70 text-foreground shadow-sm transition-colors hover:bg-white"
+                    aria-label="Previous customized cake"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goCustomizeNext}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-white/70 text-foreground shadow-sm transition-colors hover:bg-white"
+                    aria-label="Next customized cake"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  {customizeGallery.slice(0, Math.min(7, customizeGallery.length)).map((_, i) => {
+                    const page = customizeActiveIndex % Math.min(7, customizeGallery.length);
+                    const isActive = i === page;
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setCustomizeActiveIndex(i)}
+                        className={[
+                          'h-2 rounded-full transition-all duration-300',
+                          isActive ? 'w-4 bg-primary' : 'w-2 bg-foreground/20 hover:bg-foreground/30',
+                        ].join(' ')}
+                        aria-label={`Go to slide ${i + 1}`}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            ))}
+            ) : null}
           </div>
         </div>
       </div>

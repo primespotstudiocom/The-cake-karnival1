@@ -161,10 +161,10 @@ export function FranchisePage() {
                   ].map((videoSrc) => (
                     <div
                       key={videoSrc}
-                      className="overflow-hidden rounded-[1.25rem] border border-[#e7ddd8] bg-white/70 shadow-[0_14px_30px_rgba(25,16,10,0.06)] ring-1 ring-black/5"
+                      className="relative w-full overflow-hidden rounded-[1.25rem] border border-[#e7ddd8] bg-white/70 pt-[56.25%] shadow-[0_14px_30px_rgba(25,16,10,0.06)] ring-1 ring-black/5"
                     >
                       <iframe
-                        className="h-[11rem] w-full bg-black sm:h-[12.5rem] lg:h-[13.5rem]"
+                        className="absolute left-0 top-0 h-full w-full bg-black"
                         src={getYouTubeEmbedSrc(videoSrc)}
                         title="YouTube video player"
                         frameBorder={0}
