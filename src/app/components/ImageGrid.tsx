@@ -2,66 +2,66 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const products = [
+const fallbackProducts = [
   {
-    src: 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=1200&q=80',
-    title: 'Vanilla Blossom',
-    tag: 'Signature',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM (1).jpeg'),
+    title: 'Customized Cake 01',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80',
-    title: 'Chocolate Dream',
-    tag: 'Bestseller',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg'),
+    title: 'Customized Cake 02',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80',
-    title: 'Berry Silk',
-    tag: 'New',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg'),
+    title: 'Customized Cake 03',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=1200&q=80',
-    title: 'Midnight Truffle',
-    tag: 'Premium',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg'),
+    title: 'Customized Cake 04',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80',
-    title: 'Caramel Crown',
-    tag: 'Classic',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (3).jpeg'),
+    title: 'Customized Cake 05',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=1200&q=80',
-    title: 'Ruby Velvet',
-    tag: 'Chef Pick',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM.jpeg'),
+    title: 'Customized Cake 06',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1200&q=80',
-    title: 'Fruit Burst',
-    tag: 'Fresh',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM (1).jpeg'),
+    title: 'Customized Cake 07',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1200&q=80',
-    title: 'Velvet Party Cake',
-    tag: 'Celebration',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg'),
+    title: 'Customized Cake 08',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=1200&q=80',
-    title: 'Citrus Cloud',
-    tag: 'Limited',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (1).jpeg'),
+    title: 'Customized Cake 09',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=1200&q=80',
-    title: 'Cream Dot Cupcake',
-    tag: 'Cupcake',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (2).jpeg'),
+    title: 'Customized Cake 10',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&q=80',
-    title: 'Donut Delight',
-    tag: 'Sweet Bite',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM.jpeg'),
+    title: 'Customized Cake 11',
+    tag: 'Custom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1200&q=80',
-    title: 'Golden Layer',
-    tag: 'House Special',
+    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM (1).jpeg'),
+    title: 'Customized Cake 12',
+    tag: 'Custom',
   },
 ];
 
@@ -82,6 +82,38 @@ export function ImageGrid() {
   const tileRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [popupRect, setPopupRect] = useState<{ top: number; left: number; width: number; height: number } | null>(null);
+  const [products, setProducts] = useState(fallbackProducts);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const res = await fetch(`/customize/manifest.json?v=${Date.now()}`, { signal: controller.signal });
+        if (!res.ok) return;
+
+        const data = (await res.json()) as { images?: unknown };
+        if (!Array.isArray(data.images)) return;
+
+        const images = data.images.filter((img): img is string => typeof img === 'string');
+        if (!images.length) return;
+
+        setProducts(
+          images.map((src, index) => ({
+            src,
+            title: `Customized Cake ${String(index + 1).padStart(2, '0')}`,
+            tag: 'Custom',
+          })),
+        );
+      } catch {
+        // Keep fallback products if manifest loading fails.
+      }
+    })();
+
+    return () => controller.abort();
+  }, []);
 
   const hoveredProduct = useMemo(
     () => (hoveredIndex !== null ? products[hoveredIndex] : null),
@@ -182,7 +214,6 @@ export function ImageGrid() {
                       <div className="inline-flex rounded-full border border-white/45 bg-black/30 px-2.5 py-1 text-[10px] font-semibold tracking-[0.16em]">
                         {item.tag}
                       </div>
-                      <h3 className="mt-2 text-lg font-semibold leading-tight">{item.title}</h3>
                     </div>
                   </div>
                 </div>
@@ -221,7 +252,6 @@ export function ImageGrid() {
                       <div className="inline-flex rounded-full border border-white/40 bg-black/30 px-2.5 py-1 text-[11px] font-semibold tracking-[0.16em]">
                         {hoveredProduct.tag}
                       </div>
-                      <h3 className="mt-2 text-xl font-semibold leading-tight">{hoveredProduct.title}</h3>
                     </div>
                   </div>
                 </motion.div>

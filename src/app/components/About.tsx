@@ -45,7 +45,7 @@ export function About() {
   return (
     <section id="about" className="bg-[#f3f3f3] pb-24 pt-6 sm:pt-8">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.98fr_1.02fr] lg:gap-4">
           <motion.div
             className="self-start"
             initial={{ opacity: 0, x: -30 }}
@@ -53,7 +53,7 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="mx-auto w-full max-w-[340px] overflow-hidden rounded-2xl border border-[#e6ddd8] bg-white p-2 shadow-[0_18px_34px_rgba(20,14,10,0.10)] lg:mx-0">
+            <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl border border-[#e6ddd8] bg-white p-2 shadow-[0_18px_34px_rgba(20,14,10,0.10)] lg:mx-0">
               <div className="overflow-hidden rounded-xl">
                 <ImageWithFallback
                   src="/ceo.jpeg"

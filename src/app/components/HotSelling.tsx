@@ -2,15 +2,15 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const products = [
-  { id: 1, name: 'Hazelnut Praline', image: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=1000&q=80' },
-  { id: 2, name: 'Dark Choco Slice', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80' },
-  { id: 3, name: 'Classic Cupcake', image: 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=1000&q=80' },
-  { id: 4, name: 'Berry Cheesecake', image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1000&q=80' },
-  { id: 5, name: 'Creamy Tart', image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=1000&q=80' },
-  { id: 6, name: 'Fruit Burst', image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1000&q=80' },
-  { id: 7, name: 'Glaze Donut', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1000&q=80' },
-  { id: 8, name: 'Ruby Velvet', image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1000&q=80' },
+const fallbackProducts = [
+  { id: 1, name: 'Hazelnut Praline', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM (1).jpeg') },
+  { id: 2, name: 'Dark Choco Slice', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg') },
+  { id: 3, name: 'Classic Cupcake', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg') },
+  { id: 4, name: 'Berry Cheesecake', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg') },
+  { id: 5, name: 'Creamy Tart', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (3).jpeg') },
+  { id: 6, name: 'Fruit Burst', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM.jpeg') },
+  { id: 7, name: 'Glaze Donut', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM (1).jpeg') },
+  { id: 8, name: 'Ruby Velvet', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg') },
 ];
 
 type HotSellingProps = {
@@ -18,10 +18,42 @@ type HotSellingProps = {
 };
 
 export function HotSelling({ variant = 'default' }: HotSellingProps) {
+  const [products, setProducts] = useState(fallbackProducts);
   const [activeTab, setActiveTab] = useState<'new' | 'best' | 'top'>('new');
   const [isUserSelected, setIsUserSelected] = useState(false);
   const isGlass = variant === 'glass';
   const sectionClassName = isGlass ? 'bg-transparent py-20' : 'bg-[#f3f3f3] py-20';
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const res = await fetch(`/customize/manifest.json?v=${Date.now()}`, { signal: controller.signal });
+        if (!res.ok) return;
+
+        const data = (await res.json()) as { images?: unknown };
+        if (!Array.isArray(data.images)) return;
+
+        const images = data.images.filter((img): img is string => typeof img === 'string').slice(0, 8);
+        if (!images.length) return;
+
+        setProducts((prev) =>
+          images.map((image, index) => ({
+            id: index + 1,
+            name: prev[index]?.name ?? `Best Seller ${index + 1}`,
+            image,
+          })),
+        );
+      } catch {
+        // Keep fallback products if manifest loading fails.
+      }
+    })();
+
+    return () => controller.abort();
+  }, []);
 
   useEffect(() => {
     if (isUserSelected) return;

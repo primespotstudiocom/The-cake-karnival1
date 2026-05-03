@@ -1,12 +1,12 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { MessageSquare, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const categories = [
   {
     name: 'Birthday Cakes',
-    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg'),
+    image: encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.31 PM.jpeg'),
   },
   {
     name: 'Designer Cakes',
@@ -24,6 +24,63 @@ const categories = [
     name: 'Customized Cakes',
     image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM.jpeg'),
   },
+];
+
+const homePageGallery = [
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.31 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.32 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.32 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.32 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.33 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.34 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.34 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.34 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.35 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.35 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.35 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.36 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.36 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.37 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.37 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.38 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.39 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.39 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.39 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.40 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.40 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.41 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.41 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.41 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.42 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.42 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.43 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.43 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.43 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.44 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.45 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.45 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.46 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.46 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.47 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.47 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.47 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.48 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.48 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.48 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.49 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.49 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.49 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.50 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.50 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.50 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.51 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.51 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.51 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.52 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.52 PM (2).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.52 PM.jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.53 PM (1).jpeg'),
+  encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.53 PM.jpeg'),
 ];
 
 type CategorySectionProps = {
@@ -44,51 +101,11 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
     ? 'mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground'
     : 'mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground';
 
-  const customizeFallback = useMemo(
-    () => [
-      encodeURI('/customize/WhatsApp Image 2026-04-30 at 2.50.35 PM.jpeg'),
-      encodeURI('/customize/WhatsApp Image 2026-04-30 at 2.50.37 PM.jpeg'),
-      encodeURI('/customize/WhatsApp Image 2026-04-30 at 2.50.38 PM.jpeg'),
-      encodeURI('/customize/WhatsApp Image 2026-04-30 at 2.50.41 PM (1).jpeg'),
-      encodeURI('/customize/WhatsApp Image 2026-04-30 at 2.50.41 PM.jpeg'),
-    ],
-    [],
-  );
-
-  const [customizeGallery, setCustomizeGallery] = useState<string[]>(customizeFallback);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const controller = new AbortController();
-    (async () => {
-      try {
-        const res = await fetch(`/customize/manifest.json?v=${Date.now()}`, { signal: controller.signal });
-        if (!res.ok) return;
-        const data = (await res.json()) as { images?: unknown };
-        if (!Array.isArray(data.images)) return;
-
-        const images = data.images.filter((img): img is string => typeof img === 'string');
-        if (images.length) setCustomizeGallery(images);
-      } catch {
-        // ignore and keep fallback
-      }
-    })();
-
-    return () => controller.abort();
-  }, [customizeFallback]);
+  const [customizeGallery] = useState<string[]>(homePageGallery);
 
   const customizeTrackRef = useRef<HTMLDivElement | null>(null);
   const [customizeActiveIndex, setCustomizeActiveIndex] = useState(0);
   const [isCustomizePaused, setIsCustomizePaused] = useState(false);
-  const showcaseCount = 10;
-
-  const customizeShowcase = useMemo(() => {
-    if (!customizeGallery.length) return [];
-    const count = Math.min(showcaseCount, customizeGallery.length);
-    return Array.from({ length: count }, (_, i) => customizeGallery[(customizeActiveIndex + i) % customizeGallery.length]);
-  }, [customizeActiveIndex, customizeGallery]);
-
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (isCustomizePaused) return;

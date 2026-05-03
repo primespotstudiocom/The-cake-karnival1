@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import path from 'path'
+import fs from 'node:fs'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
@@ -14,6 +15,7 @@ export default defineConfig(({ mode }) => {
     react(),
     tailwindcss(),
     devContactApi(),
+    customizeManifestWatcher(),
   ],
   resolve: {
     alias: {
@@ -62,6 +64,65 @@ function devContactApi() {
           res.end(JSON.stringify({ ok: false, error: err?.message || 'Server error' }))
         }
       })
+    },
+  }
+}
+
+function customizeManifestWatcher() {
+  const customizeDir = path.resolve(__dirname, 'public', 'customize')
+  const manifestFile = path.join(customizeDir, 'manifest.json')
+  const allowedExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif'])
+
+  const encodePathSegmentPreservingSlashes = (input: string) =>
+    input
+      .split('/')
+      .map((segment) => encodeURIComponent(segment))
+      .join('/')
+
+  const writeManifest = () => {
+    if (!fs.existsSync(customizeDir)) return
+
+    const items = fs
+      .readdirSync(customizeDir, { withFileTypes: true })
+      .filter((entry) => entry.isFile())
+      .map((entry) => entry.name)
+      .filter((name) => allowedExtensions.has(path.extname(name).toLowerCase()))
+      .sort((a, b) => a.localeCompare(b))
+
+    const images = items.map((name) => encodePathSegmentPreservingSlashes(`/customize/${name}`))
+
+    fs.writeFileSync(
+      manifestFile,
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          count: images.length,
+          images,
+        },
+        null,
+        2,
+      ) + '\n',
+      'utf8',
+    )
+  }
+
+  return {
+    name: 'customize-manifest-watcher',
+    configureServer(server: any) {
+      writeManifest()
+      server.watcher.add(customizeDir)
+
+      const syncManifest = (file: string) => {
+        if (!file.startsWith(customizeDir)) return
+        if (path.basename(file) === 'manifest.json') return
+
+        writeManifest()
+        server.ws.send({ type: 'full-reload' })
+      }
+
+      server.watcher.on('add', syncManifest)
+      server.watcher.on('unlink', syncManifest)
+      server.watcher.on('change', syncManifest)
     },
   }
 }
