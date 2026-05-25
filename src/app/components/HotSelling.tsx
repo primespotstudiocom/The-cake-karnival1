@@ -22,7 +22,7 @@ export function HotSelling({ variant = 'default' }: HotSellingProps) {
   const [activeTab, setActiveTab] = useState<'new' | 'best' | 'top'>('new');
   const [isUserSelected, setIsUserSelected] = useState(false);
   const isGlass = variant === 'glass';
-  const sectionClassName = isGlass ? 'bg-transparent py-20' : 'bg-[#f3f3f3] py-20';
+  const sectionClassName = isGlass ? 'bg-transparent py-20' : 'bg-[#faf6f9] py-20';
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

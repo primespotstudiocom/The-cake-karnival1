@@ -89,7 +89,7 @@ type CategorySectionProps = {
 
 export function CategorySection({ variant = 'default' }: CategorySectionProps) {
   const isGlass = variant === 'glass';
-  const whatsappNumber = '1234567890';
+  const whatsappNumber = '9009003867';
   const sectionClassName = isGlass ? 'pt-20 pb-10 bg-transparent' : 'pt-20 pb-10 bg-background';
   const cardClassName = isGlass
     ? 'rounded-xl p-8 text-center cursor-pointer transition-all duration-200 border border-border/60 bg-card/60 shadow-lg shadow-black/10 backdrop-blur-xl supports-[backdrop-filter]:bg-card/45 hover:shadow-xl hover:shadow-black/15'

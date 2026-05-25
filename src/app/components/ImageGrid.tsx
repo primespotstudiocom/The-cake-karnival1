@@ -149,12 +149,12 @@ export function ImageGrid() {
   }, [hoveredIndex]);
 
   return (
-    <section id="photo-gallery" className="bg-[#f3f3f3] pb-16 pt-6 sm:pt-8 lg:pb-20">
+    <section id="photo-gallery" className="instagram-section pb-16 pt-6 sm:pt-8 lg:pb-20">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-[#e7ddd7] bg-gradient-to-r from-[#fff9f7] via-[#fffdfb] to-[#fff6ef] px-6 py-8 sm:px-8">
+        <div className="instagram-card relative mb-10 overflow-hidden rounded-3xl border border-[#eedde8] px-6 py-8 sm:px-8">
           <div className="pointer-events-none absolute -left-12 -top-12 h-40 w-40 rounded-full bg-[#ffd8c8]/50 blur-3xl" />
           <div className="pointer-events-none absolute -right-16 -bottom-12 h-48 w-48 rounded-full bg-[#ffe8bc]/50 blur-3xl" />
-          <p className="relative text-xs font-semibold tracking-[0.2em] text-[#b7664f]">SHOWCASE GALLERY</p>
+          <p className="relative text-xs font-semibold tracking-[0.2em] text-[#E1306C]">SHOWCASE GALLERY</p>
           <h2 className="relative mt-2 text-4xl font-semibold text-[#221f1d]">Browse Our Crafted Collection</h2>
           <p className="relative mt-2 max-w-2xl text-sm text-[#6f6662]">
             Hover any item to focus on it. Other images blur and the selected one pops in place for a smooth preview.

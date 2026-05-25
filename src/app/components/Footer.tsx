@@ -35,9 +35,9 @@ export function Footer() {
   ];
 
   return (
-    <footer id="contact" className="border-t border-[#e4e4e4] bg-[#f3f3f3]">
+    <footer id="contact" className="instagram-section border-t border-[#efdbe6]">
       <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid grid-cols-1 gap-12 border border-[#e6e6e6] bg-white p-8 shadow-[0_10px_30px_rgba(10,10,10,0.04)] md:grid-cols-2 lg:grid-cols-5">
+          <div className="instagram-card grid grid-cols-1 gap-12 border border-[#e6e6e6] p-8 shadow-[0_10px_30px_rgba(10,10,10,0.04)] md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <img src="/logo.png" alt="The Cake Carnival" className="mb-4 h-12 w-auto object-contain" />
             <p className="mb-6 leading-relaxed text-muted-foreground">
@@ -55,7 +55,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="h-5 w-5 flex-shrink-0 text-primary" />
-                <span>Support Number: 8793773867</span>
+                <span>Support Number: 9009003867</span>
               </div>
             </div>
 
@@ -100,11 +100,11 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-[#cf5c4a]">
+            <a href="#" className="transition-colors hover:text-[#E1306C]">
               Privacy Policy
             </a>
             <span>•</span>
-            <a href="#" className="transition-colors hover:text-[#cf5c4a]">
+            <a href="#" className="transition-colors hover:text-[#E1306C]">
               Terms of Service
             </a>
           </div>

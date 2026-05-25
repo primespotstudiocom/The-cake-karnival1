@@ -6,20 +6,19 @@
   --font-editorial: 'Cabinet Grotesk', sans-serif;
   --font-script: 'Cabinet Grotesk', sans-serif;
   --font-size: 16px;
-  /* Neutral cream base (removes pink site-wide) */
-  --background: #f7f4f2;
+  --background: #faf6f9;
   --foreground: #1f2a36;
   --card: #ffffff;
   --card-foreground: #1f2a36;
   --popover: #ffffff;
   --popover-foreground: #1f2a36;
-  --primary: #0395CC;
+  --primary: #D62976;
   --primary-foreground: #ffffff;
-  --secondary: #FA912C;
+  --secondary: #FA7E1E;
   --secondary-foreground: #2a1d0f;
-  --muted: #efe8e3;
-  --muted-foreground: #6b5d55;
-  --accent: #F53029;
+  --muted: #f5e9f0;
+  --muted-foreground: #735d67;
+  --accent: #962FBF;
   --accent-foreground: #ffffff;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
@@ -29,7 +28,7 @@
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #0395CC;
+  --ring: #D62976;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -38,28 +37,28 @@
   --radius: 0.75rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #0395CC;
+  --sidebar-primary: #D62976;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f3ece7;
+  --sidebar-accent: #f8edf4;
   --sidebar-accent-foreground: #1f2a36;
   --sidebar-border: rgba(31, 42, 54, 0.14);
   --sidebar-ring: rgba(3, 149, 204, 0.55);
 }
 
 .dark {
-  --background: #251421;
+  --background: #241422;
   --foreground: #fff2f6;
   --card: #392033;
   --card-foreground: #fff2f6;
   --popover: #392033;
   --popover-foreground: #fff2f6;
-  --primary: #2db5e7;
+  --primary: #f04f93;
   --primary-foreground: #092331;
-  --secondary: #f6a34f;
+  --secondary: #ff9a32;
   --secondary-foreground: #271608;
   --muted: #4f2a42;
   --muted-foreground: rgba(255, 242, 246, 0.84);
-  --accent: #ff5750;
+  --accent: #a84be0;
   --accent-foreground: #2b0505;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -75,7 +74,7 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: #2db5e7;
+  --sidebar-primary: #f04f93;
   --sidebar-primary-foreground: #092331;
   --sidebar-accent: #4f2a42;
   --sidebar-accent-foreground: #fff2f6;
@@ -153,17 +152,16 @@
 
   body::before {
     background:
-      /* Remove pinkish/red glow from global background */
-      radial-gradient(42rem 32rem at 12% 10%, rgba(250, 145, 44, 0.12), transparent 70%),
-      radial-gradient(36rem 26rem at 88% 18%, rgba(3, 149, 204, 0.18), transparent 72%),
-      radial-gradient(38rem 30rem at 52% 92%, rgba(250, 145, 44, 0.16), transparent 72%),
+      radial-gradient(42rem 32rem at 12% 10%, rgba(254, 218, 117, 0.18), transparent 70%),
+      radial-gradient(36rem 26rem at 88% 18%, rgba(150, 47, 191, 0.18), transparent 72%),
+      radial-gradient(38rem 30rem at 52% 92%, rgba(214, 41, 118, 0.16), transparent 72%),
       radial-gradient(44rem 34rem at 52% 30%, rgba(255, 255, 255, 0.55), transparent 76%);
     filter: blur(28px);
     opacity: 0.92;
   }
 
   body::after {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(247, 244, 242, 0.6));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(250, 246, 249, 0.68));
   }
 
   #root {

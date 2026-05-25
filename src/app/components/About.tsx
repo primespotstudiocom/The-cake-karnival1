@@ -43,7 +43,7 @@ export function About() {
   }, [carouselApi]);
 
   return (
-    <section id="about" className="bg-[#f3f3f3] pb-24 pt-6 sm:pt-8">
+    <section id="about" className="instagram-section pb-24 pt-6 sm:pt-8">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.98fr_1.02fr] lg:gap-4">
           <motion.div
@@ -81,23 +81,23 @@ export function About() {
 
             <div className="space-y-6 leading-relaxed text-[#7a7a7a]">
               <div className="border border-[#e6e6e6] bg-white p-6">
-                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#cf5c4a]">HOW STARTED</div>
+                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">HOW STARTED</div>
                 <p>The Cake Carnival started with a vision to make premium cakes affordable and accessible for everyone.</p>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="border border-[#e6e6e6] bg-white p-6">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#cf5c4a]">FOUNDER / CEO</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">FOUNDER / CEO</div>
                   <div className="font-semibold text-[#2a2a2a]">Add name</div>
                 </div>
                 <div className="border border-[#e6e6e6] bg-white p-6">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#cf5c4a]">OUTLETS</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">OUTLETS</div>
                   <div className="font-semibold text-[#2a2a2a]">30+ Franchise Stores</div>
                 </div>
               </div>
 
               <div className="border border-[#e6e6e6] bg-white p-6">
-                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#cf5c4a]">VISION</div>
+                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">VISION</div>
                 <div className="font-semibold text-[#2a2a2a]">
                   To become Maharashtra's most loved cake brand with 30+ outlets.
                 </div>
@@ -111,7 +111,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.75, delay: 0.15 }}
-          className="relative mt-14 overflow-hidden rounded-3xl border border-[#eadfda] bg-gradient-to-br from-[#fff8f4] via-[#fffdf9] to-[#f7f7fb] px-6 py-10 sm:mt-16 sm:px-8 lg:px-10"
+          className="instagram-card relative mt-14 overflow-hidden rounded-3xl border border-[#eadfda] px-6 py-10 sm:mt-16 sm:px-8 lg:px-10"
         >
           <div className="pointer-events-none absolute -left-16 -top-16 h-48 w-48 rounded-full bg-[#ffd9c6]/45 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -right-10 h-56 w-56 rounded-full bg-[#ffe8bc]/50 blur-3xl" />

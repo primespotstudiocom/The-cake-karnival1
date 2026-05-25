@@ -84,9 +84,9 @@ export function FranchiseInquiryPopup() {
           </button>
 
           <div className="max-h-[78vh] overflow-auto p-6 sm:p-7">
-            <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#cf5c4a] uppercase">
+            <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#E1306C] uppercase">
               Franchise Inquiry
-              <span className="inline-block h-2 w-2 rounded-full bg-[#cf5c4a]/70" />
+              <span className="inline-block h-2 w-2 rounded-full bg-[#E1306C]/70" />
             </div>
             <h3 className="mb-2 text-2xl font-semibold text-[#2a2a2a] sm:text-3xl" style={{ fontFamily: 'var(--font-editorial)' }}>
               Let's Build Your Store
@@ -103,7 +103,7 @@ export function FranchiseInquiryPopup() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your full name"
-                  className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                  className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                 />
               </div>
 
@@ -112,13 +112,13 @@ export function FranchiseInquiryPopup() {
                   <div>
                     <label className="mb-2 block text-[#2a2a2a] font-semibold">Phone / WhatsApp</label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#cf5c4a]" />
+                      <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#E1306C]" />
                       <input
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="Your number"
-                        className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-10 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                        className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-10 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                       />
                     </div>
                   </div>
@@ -126,13 +126,13 @@ export function FranchiseInquiryPopup() {
                   <div>
                     <label className="mb-2 block text-[#2a2a2a] font-semibold">City</label>
                     <div className="relative">
-                      <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#cf5c4a]" />
+                      <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#E1306C]" />
                       <input
                         required
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         placeholder="Your city"
-                        className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-10 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                        className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-10 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                       />
                     </div>
                   </div>
@@ -142,13 +142,13 @@ export function FranchiseInquiryPopup() {
               <div>
                 <label className="mb-2 block text-[#2a2a2a] font-semibold">Email (Optional)</label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#cf5c4a]" />
+                  <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#E1306C]" />
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Your email"
-                    className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-10 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                    className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-10 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                   />
                 </div>
               </div>
@@ -161,13 +161,13 @@ export function FranchiseInquiryPopup() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us your preferred location, expected timeline, and questions..."
                   rows={4}
-                  className="w-full resize-none rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                  className="w-full resize-none rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#1f1f1f] bg-[#1f1f1f] px-6 py-4 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:border-[#cf5c4a] hover:bg-[#cf5c4a]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#1f1f1f] bg-[#1f1f1f] px-6 py-4 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:border-[#E1306C] hover:bg-[#E1306C]"
               >
                 <MessageCircle className="size-5" />
                 Send Inquiry on WhatsApp
@@ -179,7 +179,7 @@ export function FranchiseInquiryPopup() {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="group inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#cf5c4a] text-white shadow-[0_18px_34px_rgba(207,92,74,0.38)] transition-transform duration-200 hover:scale-105 hover:bg-[#b94d3d]"
+          className="group inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#E1306C] text-white shadow-[0_18px_34px_rgba(225,48,108,0.38)] transition-transform duration-200 hover:scale-105 hover:bg-[#C13584]"
           aria-label="Open franchise inquiry form"
         >
           <MessageCircle className="h-7 w-7" />

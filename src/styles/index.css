@@ -30,39 +30,64 @@
   .custom-cursor-dot {
     height: 10px;
     width: 10px;
-    background: #cf5c4a;
-    box-shadow: 0 0 18px rgba(207, 92, 74, 0.45);
+    background: #e1306c;
+    box-shadow: 0 0 18px rgba(225, 48, 108, 0.45);
   }
 
   .custom-cursor-dot.is-moving {
-    box-shadow: 0 0 24px rgba(207, 92, 74, 0.6);
+    box-shadow: 0 0 24px rgba(225, 48, 108, 0.6);
   }
 
   .custom-cursor-ring {
     height: 42px;
     width: 42px;
-    border: 1.5px solid rgba(207, 92, 74, 0.45);
+    border: 1.5px solid rgba(225, 48, 108, 0.45);
     background:
-      radial-gradient(circle, rgba(255, 229, 212, 0.28) 0%, rgba(255, 229, 212, 0.06) 55%, transparent 72%);
+      radial-gradient(circle, rgba(255, 220, 232, 0.28) 0%, rgba(255, 220, 232, 0.06) 55%, transparent 72%);
     backdrop-filter: blur(2px);
   }
 
   .custom-cursor-ring.is-moving {
     animation: cursorPulse 0.7s ease-out infinite;
-    border-color: rgba(207, 92, 74, 0.7);
+    border-color: rgba(225, 48, 108, 0.7);
   }
 }
 
 @keyframes cursorPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(207, 92, 74, 0.22);
+    box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.22);
   }
 
   70% {
-    box-shadow: 0 0 0 14px rgba(207, 92, 74, 0);
+    box-shadow: 0 0 0 14px rgba(225, 48, 108, 0);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(207, 92, 74, 0);
+    box-shadow: 0 0 0 0 rgba(225, 48, 108, 0);
   }
+}
+
+.instagram-section {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(254, 218, 117, 0.34) 0%,
+      rgba(250, 126, 30, 0.28) 26%,
+      rgba(214, 41, 118, 0.22) 62%,
+      rgba(150, 47, 191, 0.24) 100%
+    ),
+    #fff9fb;
+}
+
+.instagram-card {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(254, 218, 117, 0.48) 0%,
+      rgba(250, 126, 30, 0.38) 22%,
+      rgba(214, 41, 118, 0.3) 60%,
+      rgba(150, 47, 191, 0.3) 100%
+    ),
+    rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
 }

@@ -15,7 +15,7 @@ import {
 
 export function FranchisePage() {
   const whatsappNumber = '9009003867';
-  const supportNumber = '8793773867';
+  const supportNumber = '9009003867';
   const crmUrl =
     'https://docs.google.com/spreadsheets/d/1rfpKfYham04u5SMGoYCt_-ZbXtHC4f7fNoYx_oyXqBc/edit?gid=0#gid=0';
 
@@ -83,9 +83,9 @@ export function FranchisePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#f3f3f3] pb-10 pt-6 sm:pt-8">
-        <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-[#f5b49f]/30 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 top-6 h-80 w-80 rounded-full bg-[#f6d8a2]/35 blur-3xl" />
+      <section className="instagram-section relative overflow-hidden pb-10 pt-6 sm:pt-8">
+        <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-[#FEDA75]/25 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 top-6 h-80 w-80 rounded-full bg-[#962FBF]/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <motion.div
@@ -97,7 +97,7 @@ export function FranchisePage() {
             <div className="max-w-3xl">
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#e3cfc8] bg-white/75 px-4 py-1 text-xs font-semibold tracking-[0.18em] text-[#b45f4f]">
                 FRANCHISE OPPORTUNITY
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#cf5c4a]" />
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#E1306C]" />
               </p>
 
               <h1
@@ -132,7 +132,7 @@ export function FranchisePage() {
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       className="rounded-2xl border border-[#e7ddd8] bg-white/90 p-4 shadow-[0_14px_30px_rgba(25,16,10,0.06)]"
                     >
-                      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#fff3ee] text-[#cf5c4a]">
+                      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#fff0f6] text-[#E1306C]">
                         <Icon className="h-4 w-4" />
                       </div>
                       <h3 className="text-lg font-semibold text-[#1f1f1f]">{pillar.title}</h3>
@@ -149,8 +149,8 @@ export function FranchisePage() {
               transition={{ duration: 0.55, delay: 0.1 }}
               className="relative mt-2 lg:mt-0 lg:self-center"
             >
-              <div className="absolute -left-6 top-10 hidden h-28 w-28 rounded-full bg-[#f4c9b8]/35 blur-3xl lg:block" />
-              <div className="absolute -right-6 bottom-10 hidden h-32 w-32 rounded-full bg-[#f6d8a2]/35 blur-3xl lg:block" />
+              <div className="absolute -left-6 top-10 hidden h-28 w-28 rounded-full bg-[#FA7E1E]/20 blur-3xl lg:block" />
+              <div className="absolute -right-6 bottom-10 hidden h-32 w-32 rounded-full bg-[#962FBF]/20 blur-3xl lg:block" />
 
               <div className="relative mx-auto w-full max-w-[29rem] lg:ml-auto">
                 <div className="grid grid-cols-1 gap-3">
@@ -182,7 +182,7 @@ export function FranchisePage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f3f3] pb-24 pt-6">
+      <section className="instagram-section pb-24 pt-6">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
             <div className="space-y-8">
@@ -194,19 +194,19 @@ export function FranchisePage() {
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   <div className="rounded-2xl border border-[#ece3de] bg-[#fffdfc] p-5">
                     <div className="mb-4 flex items-center gap-3">
-                      <MessageCircle className="size-5 text-[#cf5c4a]" />
-                      <div className="text-xs font-semibold tracking-[0.18em] text-[#cf5c4a] uppercase">Contact</div>
+                      <MessageCircle className="size-5 text-[#E1306C]" />
+                      <div className="text-xs font-semibold tracking-[0.18em] text-[#E1306C] uppercase">Contact</div>
                     </div>
                     <div className="space-y-3 text-sm text-[#777]">
                       <div className="flex items-start gap-3">
-                        <Mail className="mt-0.5 size-4 text-[#cf5c4a]" />
+                        <Mail className="mt-0.5 size-4 text-[#E1306C]" />
                         <div>
                           <div className="font-semibold text-[#2a2a2a]">Email</div>
                           <div>Add email</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <MessageCircle className="mt-0.5 size-4 text-[#cf5c4a]" />
+                        <MessageCircle className="mt-0.5 size-4 text-[#E1306C]" />
                         <div>
                           <div className="font-semibold text-[#2a2a2a]">WhatsApp</div>
                           <a
@@ -220,7 +220,7 @@ export function FranchisePage() {
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Phone className="mt-0.5 size-4 text-[#cf5c4a]" />
+                        <Phone className="mt-0.5 size-4 text-[#E1306C]" />
                         <div>
                           <div className="font-semibold text-[#2a2a2a]">Support Number</div>
                           <a className="transition-colors hover:text-[#1f1f1f]" href={`tel:${supportNumber}`}>
@@ -233,8 +233,8 @@ export function FranchisePage() {
 
                   <div className="rounded-2xl border border-[#ece3de] bg-[#fffdfc] p-5">
                     <div className="mb-4 flex items-center gap-3">
-                      <ClipboardList className="size-5 text-[#cf5c4a]" />
-                      <div className="text-xs font-semibold tracking-[0.18em] text-[#cf5c4a] uppercase">Information</div>
+                      <ClipboardList className="size-5 text-[#E1306C]" />
+                      <div className="text-xs font-semibold tracking-[0.18em] text-[#E1306C] uppercase">Information</div>
                     </div>
                     <div className="space-y-3 text-sm text-[#777]">
                       <div>
@@ -254,8 +254,8 @@ export function FranchisePage() {
 
                   <div className="rounded-2xl border border-[#ece3de] bg-[#fffdfc] p-5">
                     <div className="mb-4 flex items-center gap-3">
-                      <Video className="size-5 text-[#cf5c4a]" />
-                      <div className="text-xs font-semibold tracking-[0.18em] text-[#cf5c4a] uppercase">Media</div>
+                      <Video className="size-5 text-[#E1306C]" />
+                      <div className="text-xs font-semibold tracking-[0.18em] text-[#E1306C] uppercase">Media</div>
                     </div>
                     <div className="space-y-2 text-sm text-[#777]">
                       <div className="flex items-center justify-between gap-4">
@@ -279,8 +279,8 @@ export function FranchisePage() {
 
                   <div className="rounded-2xl border border-[#ece3de] bg-[#fffdfc] p-5">
                     <div className="mb-4 flex items-center gap-3">
-                      <FileSpreadsheet className="size-5 text-[#cf5c4a]" />
-                      <div className="text-xs font-semibold tracking-[0.18em] text-[#cf5c4a] uppercase">CRM</div>
+                      <FileSpreadsheet className="size-5 text-[#E1306C]" />
+                      <div className="text-xs font-semibold tracking-[0.18em] text-[#E1306C] uppercase">CRM</div>
                     </div>
                     <div className="space-y-3 text-sm text-[#777]">
                       <div>
@@ -304,9 +304,9 @@ export function FranchisePage() {
             </div>
 
             <div className="rounded-3xl border border-[#e6ddd8] bg-white p-8 shadow-[0_14px_34px_rgba(10,10,10,0.05)]">
-              <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#cf5c4a] uppercase">
+              <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#E1306C] uppercase">
                 Franchise Inquiry
-                <span className="inline-block h-2 w-2 rounded-full bg-[#cf5c4a]/70" />
+                <span className="inline-block h-2 w-2 rounded-full bg-[#E1306C]/70" />
               </div>
               <h3 className="mb-2 text-3xl font-semibold text-[#2a2a2a]" style={{ fontFamily: 'var(--font-editorial)' }}>
                 Let's Build Your Store
@@ -324,7 +324,7 @@ export function FranchisePage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your full name"
-                    className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                    className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                   />
                 </div>
 
@@ -337,7 +337,7 @@ export function FranchisePage() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="Your number"
-                      className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                      className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                     />
                   </div>
                   <div>
@@ -350,7 +350,7 @@ export function FranchisePage() {
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         placeholder="Your city"
-                        className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-9 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                        className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] py-3 pl-9 pr-4 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                       />
                     </div>
                   </div>
@@ -363,7 +363,7 @@ export function FranchisePage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Your email"
-                    className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                    className="w-full rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                   />
                 </div>
 
@@ -375,7 +375,7 @@ export function FranchisePage() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us your preferred location, expected timeline, and questions..."
                     rows={4}
-                    className="w-full resize-none rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                    className="w-full resize-none rounded-xl border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                   />
                 </div>
 
@@ -383,7 +383,7 @@ export function FranchisePage() {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#1f1f1f] bg-[#1f1f1f] px-6 py-4 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:border-[#cf5c4a] hover:bg-[#cf5c4a]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#1f1f1f] bg-[#1f1f1f] px-6 py-4 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:border-[#E1306C] hover:bg-[#E1306C]"
                 >
                   <MessageCircle className="size-5" />
                   Send Inquiry on WhatsApp
@@ -401,13 +401,13 @@ export function FranchisePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="mt-12 rounded-3xl border border-[#e6ddd8] bg-gradient-to-r from-[#fffaf7] via-[#fffdfb] to-[#fff8ef] p-8"
+            className="instagram-card mt-12 rounded-3xl border border-[#eadbe6] p-8"
           >
-            <p className="text-xs font-semibold tracking-[0.22em] text-[#b56d56]">HOW IT WORKS</p>
+            <p className="text-xs font-semibold tracking-[0.22em] text-[#E1306C]">HOW IT WORKS</p>
             <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-4">
               {setupSteps.map((step, idx) => (
                 <div key={step.title} className="rounded-2xl border border-[#f0e3dc] bg-white p-5">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#cf5c4a]">STEP {idx + 1}</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">STEP {idx + 1}</div>
                   <h4 className="text-lg font-semibold text-[#222]">{step.title}</h4>
                   <p className="mt-1 text-sm text-[#706760]">{step.text}</p>
                 </div>

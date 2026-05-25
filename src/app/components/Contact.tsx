@@ -16,11 +16,11 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Name: ${formData.name}%0APhone: ${formData.phone}%0AProduct Type: ${formData.productType}%0AMessage: ${formData.message}`;
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/9009003867?text=${message}`, '_blank');
   };
 
   return (
-    <section id="contact" ref={ref} className="bg-[#f3f3f3] pb-16 pt-6 sm:pt-8 lg:pb-20">
+    <section id="contact" ref={ref} className="instagram-section pb-16 pt-6 sm:pt-8 lg:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <div className="mb-4 inline-block border border-[#e2e2e2] bg-white px-4 py-2 text-xs font-semibold tracking-[0.14em] text-[#cf5c4a]">
+          <div className="mb-4 inline-block border border-[#f0d6e3] bg-white px-4 py-2 text-xs font-semibold tracking-[0.14em] text-[#E1306C]">
             GET IN TOUCH
           </div>
           <h2 className="mb-4 text-4xl font-semibold text-[#1f1f1f] sm:text-5xl" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -42,7 +42,7 @@ export function Contact() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="border border-[#e6e6e6] bg-white p-8 shadow-[0_10px_28px_rgba(10,10,10,0.04)]"
+            className="instagram-card border border-[#e6e6e6] p-8 shadow-[0_10px_28px_rgba(10,10,10,0.04)]"
           >
             <h3 className="mb-6 text-2xl font-semibold text-[#232323]">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -54,7 +54,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                 />
               </div>
 
@@ -66,7 +66,7 @@ export function Contact() {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="Your phone number"
-                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                 />
               </div>
 
@@ -76,7 +76,7 @@ export function Contact() {
                   required
                   value={formData.productType}
                   onChange={(e) => setFormData({ ...formData, productType: e.target.value })}
-                  className="w-full appearance-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                  className="w-full appearance-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                 >
                   <option value="">Select a Product</option>
                   <option value="Birthday Cake">Birthday Cake</option>
@@ -96,7 +96,7 @@ export function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Your order specifications..."
                   rows={4}
-                  className="w-full resize-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#cf5c4a] focus-visible:ring-[3px] focus-visible:ring-[#cf5c4a33]"
+                  className="w-full resize-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#E1306C] focus-visible:ring-[3px] focus-visible:ring-[#E1306C33]"
                 ></textarea>
               </div>
 
@@ -104,7 +104,7 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative isolate flex w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#cf5c4a] via-[#f2b08a] to-[#cf5c4a] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white shadow-[0_14px_34px_rgba(207,92,74,0.22)] transition-all hover:shadow-[0_18px_44px_rgba(207,92,74,0.32)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#cf5c4a]/25"
+                className="relative isolate flex w-full items-center justify-center overflow-hidden rounded-2xl bg-[linear-gradient(90deg,#FEDA75_0%,#FA7E1E_30%,#D62976_68%,#962FBF_100%)] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white shadow-[0_14px_34px_rgba(214,41,118,0.24)] transition-all hover:shadow-[0_18px_44px_rgba(214,41,118,0.34)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#D62976]/25"
               >
                 <span aria-hidden className="pointer-events-none absolute inset-0 opacity-80">
                   <span className="absolute left-6 top-3 size-1.5 rounded-full bg-white/80" />
@@ -129,12 +129,12 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="border border-[#e6e6e6] bg-white p-8 shadow-[0_10px_28px_rgba(10,10,10,0.04)]">
+            <div className="instagram-card border border-[#e6e6e6] p-8 shadow-[0_10px_28px_rgba(10,10,10,0.04)]">
               <h3 className="mb-6 text-2xl font-semibold text-[#232323]">Our Bakery</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <MapPin className="h-6 w-6 text-[#cf5c4a]" />
+                    <MapPin className="h-6 w-6 text-[#E1306C]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Address</div>
@@ -148,17 +148,17 @@ export function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <Phone className="h-6 w-6 text-[#cf5c4a]" />
+                    <Phone className="h-6 w-6 text-[#E1306C]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Phone</div>
-                    <div className="text-[#777]">+91 98765 43210 / 020-12345678</div>
+                    <div className="text-[#777]">+91 9009003867</div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <Mail className="h-6 w-6 text-[#cf5c4a]" />
+                    <Mail className="h-6 w-6 text-[#E1306C]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Email</div>
@@ -168,7 +168,7 @@ export function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <Clock className="h-6 w-6 text-[#cf5c4a]" />
+                    <Clock className="h-6 w-6 text-[#E1306C]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Hours</div>
@@ -178,14 +178,14 @@ export function Contact() {
               </div>
             </div>
 
-            <motion.div whileHover={{ scale: 1.01 }} className="border border-[#e6e6e6] bg-white p-8 shadow-[0_10px_28px_rgba(10,10,10,0.04)]">
+            <motion.div whileHover={{ scale: 1.01 }} className="instagram-card border border-[#e6e6e6] p-8 shadow-[0_10px_28px_rgba(10,10,10,0.04)]">
               <h3 className="mb-4 text-2xl font-semibold text-[#232323]">Quick Order on WhatsApp</h3>
               <p className="mb-6 text-[#777]">Chat with us directly for instant responses and quick orders!</p>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9009003867" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.96 }}
-                  className="relative isolate w-full overflow-hidden rounded-2xl border border-[#cf5c4a]/25 bg-gradient-to-r from-[#cf5c4a] via-[#f2b08a] to-[#f6d3c0] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] shadow-[0_14px_34px_rgba(207,92,74,0.20)] transition-all hover:shadow-[0_18px_44px_rgba(207,92,74,0.30)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#cf5c4a]/25"
+                  className="relative isolate w-full overflow-hidden rounded-2xl border border-[#D62976]/25 bg-[linear-gradient(90deg,#FEDA75_0%,#FA7E1E_30%,#D62976_68%,#962FBF_100%)] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] shadow-[0_14px_34px_rgba(214,41,118,0.20)] transition-all hover:shadow-[0_18px_44px_rgba(214,41,118,0.30)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#D62976]/25"
                 >
                   <span aria-hidden className="pointer-events-none absolute inset-0 opacity-80">
                     <span className="absolute left-6 top-3 size-1.5 rounded-full bg-white/80" />

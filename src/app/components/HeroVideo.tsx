@@ -17,8 +17,8 @@ export function HeroVideo() {
         offerLabel: 'Weekend Special',
         offerValue: '20% OFF',
         offerNote: 'On all designer cakes this weekend',
-        accent: '#f15a24',
-        softAccent: 'rgba(241,90,36,0.14)',
+        accent: '#FA7E1E',
+        softAccent: 'rgba(250,126,30,0.18)',
         src: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=1200&q=80',
         alt: 'Cake slice with garnish',
       },
@@ -29,8 +29,8 @@ export function HeroVideo() {
         offerLabel: 'Same Day Orders',
         offerValue: 'FREE DELIVERY',
         offerNote: 'For selected locations above Rs. 999',
-        accent: '#0f8b8d',
-        softAccent: 'rgba(15,139,141,0.14)',
+        accent: '#D62976',
+        softAccent: 'rgba(253,29,29,0.14)',
         src: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80',
         alt: 'Chocolate cake',
       },
@@ -41,8 +41,8 @@ export function HeroVideo() {
         offerLabel: 'Bulk Party Offer',
         offerValue: 'BUY 2 GET 1',
         offerNote: 'Cupcakes combo for events and parties',
-        accent: '#6f4df6',
-        softAccent: 'rgba(111,77,246,0.14)',
+        accent: '#962FBF',
+        softAccent: 'rgba(150,47,191,0.18)',
         src: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80',
         alt: 'Berry cake slice',
       },
@@ -53,8 +53,8 @@ export function HeroVideo() {
         offerLabel: 'Midnight Surprise',
         offerValue: 'LATE NIGHT SLOTS',
         offerNote: 'Book 11 PM to 1 AM delivery windows',
-        accent: '#da3f57',
-        softAccent: 'rgba(218,63,87,0.14)',
+        accent: '#D62976',
+        softAccent: 'rgba(214,41,118,0.18)',
         src: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=1200&q=80',
         alt: 'Celebration cake',
       },
@@ -88,10 +88,10 @@ export function HeroVideo() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-[#f5efec]"
+      className="relative w-full overflow-hidden bg-[#faf4f8]"
       style={{
         backgroundImage:
-          'radial-gradient(circle at 18% 90%, rgba(236, 102, 44, 0.14), transparent 30%), radial-gradient(circle at 86% 16%, rgba(244, 163, 116, 0.12), transparent 30%)',
+          'radial-gradient(circle at 18% 90%, rgba(254, 218, 117, 0.18), transparent 30%), radial-gradient(circle at 48% 10%, rgba(250, 126, 30, 0.14), transparent 28%), radial-gradient(circle at 86% 16%, rgba(150, 47, 191, 0.12), transparent 30%)',
       }}
     >
       <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 55 }} className="w-full">
@@ -101,7 +101,7 @@ export function HeroVideo() {
               <div
                 className="relative z-10 mx-auto max-w-7xl px-6 pb-12 pt-20 sm:pb-16 sm:pt-24 md:pt-28 lg:pb-20 lg:pt-32"
                 style={{
-                  background: `linear-gradient(to right, #f5efec 0%, #f5efec 40%, transparent 70%), linear-gradient(to top, #f5efec 0%, transparent 50%)`,
+                  background: `linear-gradient(to right, #faf4f8 0%, #faf4f8 40%, transparent 70%), linear-gradient(to top, #faf4f8 0%, transparent 50%)`,
                 }}
               >
                 <div className="relative grid items-center gap-12 lg:min-h-[620px] lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-16">

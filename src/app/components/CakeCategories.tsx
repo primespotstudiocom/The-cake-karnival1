@@ -7,7 +7,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 export function CakeCategories() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const whatsappNumber = '1234567890';
+  const whatsappNumber = '9009003867';
 
   const orderCategoryOptions = [
     'Anniversary Cakes',
@@ -128,11 +128,11 @@ export function CakeCategories() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="mx-auto mt-10 max-w-5xl rounded-2xl border border-border bg-gradient-to-r from-[#fff9f7] via-[#fffdfb] to-[#fff6ef] p-5 shadow-[0_18px_40px_rgba(30,16,10,0.08)]"
+          className="instagram-card mx-auto mt-10 max-w-5xl rounded-2xl border border-border p-5 shadow-[0_18px_40px_rgba(30,16,10,0.08)]"
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="min-w-0">
-              <p className="text-xs font-semibold tracking-[0.22em] text-[#b7664f]">ORDER ON WHATSAPP</p>
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#E1306C]">ORDER ON WHATSAPP</p>
               <div className="mt-3 flex snap-x snap-mandatory flex-nowrap gap-2 overflow-x-auto pb-1">
                 {orderCategoryOptions.map((option) => {
                   const isActive = option === selectedOrderCategory;
