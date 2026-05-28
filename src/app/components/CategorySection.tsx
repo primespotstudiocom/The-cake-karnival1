@@ -179,14 +179,14 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
           })}
         </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-b from-white/70 via-white/55 to-white/40 p-6 shadow-[0_22px_50px_rgba(20,20,20,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/35 md:p-8">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(207,92,74,0.10),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(255,179,92,0.10),transparent_55%)]" />
+        <div className="relative mt-10 overflow-hidden rounded-3xl border border-white/30 bg-[linear-gradient(135deg,#ffd200_0%,#f7a532_20%,#f06b52_42%,#e13384_66%,#b432c7_84%,#6d31df_100%)] p-6 shadow-[0_30px_70px_rgba(96,36,120,0.22)] md:p-8">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.28),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]" />
 
           <div className="relative flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs font-semibold tracking-[0.24em] text-muted-foreground">CUSTOMIZED CAKES</p>
-              <h3 className="mt-2 text-3xl font-semibold leading-tight text-card-foreground">Make it personal</h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              <p className="text-xs font-semibold tracking-[0.24em] text-white/80">CUSTOMIZED CAKES</p>
+              <h3 className="mt-2 text-3xl font-semibold leading-tight text-white">Make it personal</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/78">
                 Share your theme, photo, and weight — we’ll craft it exactly the way you want.
               </p>
             </div>
@@ -194,7 +194,7 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
               href={customizeWhatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className={[orderButtonClassName, 'md:w-auto'].join(' ')}
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/35 bg-white/16 px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(65,18,82,0.18)] backdrop-blur-sm transition-all duration-200 hover:bg-white/24 md:w-auto"
             >
               <MessageSquare className="h-4 w-4" />
               Order Customized Cake
@@ -217,7 +217,7 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
                 <div
                   key={src}
                   data-customize-slide="true"
-                  className="group relative aspect-[3/4] w-60 shrink-0 snap-start overflow-hidden rounded-3xl bg-white shadow-lg shadow-black/10 ring-1 ring-black/5"
+                  className="group relative aspect-[3/4] w-60 shrink-0 snap-start overflow-hidden rounded-3xl bg-white/18 shadow-[0_20px_40px_rgba(25,12,40,0.22)] ring-1 ring-white/30 backdrop-blur-[2px]"
                 >
                   <ImageWithFallback
                     src={src}
@@ -235,7 +235,7 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
                   <button
                     type="button"
                     onClick={goCustomizePrev}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-white/70 text-foreground shadow-sm transition-colors hover:bg-white"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/35 bg-white/18 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/28"
                     aria-label="Previous customized cake"
                   >
                     <ChevronLeft className="h-5 w-5" />
@@ -243,7 +243,7 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
                   <button
                     type="button"
                     onClick={goCustomizeNext}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-white/70 text-foreground shadow-sm transition-colors hover:bg-white"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/35 bg-white/18 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/28"
                     aria-label="Next customized cake"
                   >
                     <ChevronRight className="h-5 w-5" />
@@ -261,7 +261,7 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
                         onClick={() => setCustomizeActiveIndex(i)}
                         className={[
                           'h-2 rounded-full transition-all duration-300',
-                          isActive ? 'w-4 bg-primary' : 'w-2 bg-foreground/20 hover:bg-foreground/30',
+                          isActive ? 'w-4 bg-white' : 'w-2 bg-white/38 hover:bg-white/58',
                         ].join(' ')}
                         aria-label={`Go to slide ${i + 1}`}
                       />

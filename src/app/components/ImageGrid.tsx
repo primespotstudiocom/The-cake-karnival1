@@ -154,7 +154,7 @@ export function ImageGrid() {
         <div className="instagram-card relative mb-10 overflow-hidden rounded-3xl border border-[#eedde8] px-6 py-8 sm:px-8">
           <div className="pointer-events-none absolute -left-12 -top-12 h-40 w-40 rounded-full bg-[#ffd8c8]/50 blur-3xl" />
           <div className="pointer-events-none absolute -right-16 -bottom-12 h-48 w-48 rounded-full bg-[#ffe8bc]/50 blur-3xl" />
-          <p className="relative text-xs font-semibold tracking-[0.2em] text-[#E1306C]">SHOWCASE GALLERY</p>
+          <p className="relative text-xs font-semibold tracking-[0.2em] text-[#FA7E1E]">SHOWCASE GALLERY</p>
           <h2 className="relative mt-2 text-4xl font-semibold text-[#221f1d]">Browse Our Crafted Collection</h2>
           <p className="relative mt-2 max-w-2xl text-sm text-[#6f6662]">
             Hover any item to focus on it. Other images blur and the selected one pops in place for a smooth preview.

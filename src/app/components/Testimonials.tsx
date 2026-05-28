@@ -23,7 +23,7 @@ type TestimonialsProps = {
 };
 
 export function Testimonials({ variant = 'default' }: TestimonialsProps) {
-  const sectionClassName = variant === 'glass' ? 'bg-[#faf6f9] py-20' : 'bg-[#faf6f9] py-20';
+  const sectionClassName = variant === 'glass' ? 'bg-[#faf7f1] py-20' : 'bg-[#faf7f1] py-20';
 
   const bannerImages = [
     'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1800&q=80',

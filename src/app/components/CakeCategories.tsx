@@ -132,7 +132,7 @@ export function CakeCategories() {
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="min-w-0">
-              <p className="text-xs font-semibold tracking-[0.22em] text-[#E1306C]">ORDER ON WHATSAPP</p>
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#FA7E1E]">ORDER ON WHATSAPP</p>
               <div className="mt-3 flex snap-x snap-mandatory flex-nowrap gap-2 overflow-x-auto pb-1">
                 {orderCategoryOptions.map((option) => {
                   const isActive = option === selectedOrderCategory;
@@ -146,7 +146,7 @@ export function CakeCategories() {
                       className={[
                         'shrink-0 snap-start rounded-full border px-3.5 py-2 text-xs font-semibold tracking-[0.14em] transition-colors',
                         isActive
-                          ? 'border-primary bg-primary text-primary-foreground shadow-[0_10px_24px_rgba(207,92,74,0.25)]'
+                          ? 'border-primary bg-primary text-primary-foreground shadow-[0_10px_24px_rgba(250,126,30,0.25)]'
                           : 'border-border bg-white text-foreground/75 hover:bg-white/70',
                       ].join(' ')}
                     >
@@ -168,7 +168,7 @@ export function CakeCategories() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold tracking-[0.14em] text-primary-foreground shadow-[0_18px_40px_rgba(207,92,74,0.26)] transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-[0_22px_48px_rgba(207,92,74,0.30)]"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold tracking-[0.14em] text-primary-foreground shadow-[0_18px_40px_rgba(250,126,30,0.26)] transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-[0_22px_48px_rgba(250,126,30,0.30)]"
               >
                 <MessageSquare className="h-5 w-5" />
                 Order {selectedOrderCategory}

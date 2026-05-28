@@ -39,7 +39,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="instagram-card grid grid-cols-1 gap-12 border border-[#e6e6e6] p-8 shadow-[0_10px_30px_rgba(10,10,10,0.04)] md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <img src="/logo.png" alt="The Cake Carnival" className="mb-4 h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="The Cake Carnival" className="mb-4 h-20 w-auto object-contain" />
             <p className="mb-6 leading-relaxed text-muted-foreground">
               Crafting premium baked goods with traditional methods and the finest ingredients since 2015.
             </p>
@@ -100,11 +100,11 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-[#E1306C]">
+            <a href="#" className="transition-colors hover:text-[#FA7E1E]">
               Privacy Policy
             </a>
             <span>•</span>
-            <a href="#" className="transition-colors hover:text-[#E1306C]">
+            <a href="#" className="transition-colors hover:text-[#FA7E1E]">
               Terms of Service
             </a>
           </div>

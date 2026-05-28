@@ -81,23 +81,23 @@ export function About() {
 
             <div className="space-y-6 leading-relaxed text-[#7a7a7a]">
               <div className="border border-[#e6e6e6] bg-white p-6">
-                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">HOW STARTED</div>
+                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">HOW STARTED</div>
                 <p>The Cake Carnival started with a vision to make premium cakes affordable and accessible for everyone.</p>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="border border-[#e6e6e6] bg-white p-6">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">FOUNDER / CEO</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">FOUNDER / CEO</div>
                   <div className="font-semibold text-[#2a2a2a]">Add name</div>
                 </div>
                 <div className="border border-[#e6e6e6] bg-white p-6">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">OUTLETS</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">OUTLETS</div>
                   <div className="font-semibold text-[#2a2a2a]">30+ Franchise Stores</div>
                 </div>
               </div>
 
               <div className="border border-[#e6e6e6] bg-white p-6">
-                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#E1306C]">VISION</div>
+                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">VISION</div>
                 <div className="font-semibold text-[#2a2a2a]">
                   To become Maharashtra's most loved cake brand with 30+ outlets.
                 </div>
