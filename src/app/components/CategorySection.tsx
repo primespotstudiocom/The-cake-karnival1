@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { MessageSquare, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+
+const shopUrl = 'https://www.kwikza.com/shop/the-cake-carnival-katraj-pune';
 
 const categories = [
   {
@@ -89,7 +89,6 @@ type CategorySectionProps = {
 
 export function CategorySection({ variant = 'default' }: CategorySectionProps) {
   const isGlass = variant === 'glass';
-  const whatsappNumber = '9009003867';
   const sectionClassName = isGlass ? 'pt-20 pb-10 bg-transparent' : 'pt-20 pb-10 bg-background';
   const cardClassName = isGlass
     ? 'rounded-xl p-8 text-center cursor-pointer transition-all duration-200 border border-border/60 bg-card/60 shadow-lg shadow-black/10 backdrop-blur-xl supports-[backdrop-filter]:bg-card/45 hover:shadow-xl hover:shadow-black/15'
@@ -101,56 +100,13 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
     ? 'mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground'
     : 'mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground';
 
-  const [customizeGallery] = useState<string[]>(homePageGallery);
-
-  const customizeTrackRef = useRef<HTMLDivElement | null>(null);
-  const [customizeActiveIndex, setCustomizeActiveIndex] = useState(0);
-  const [isCustomizePaused, setIsCustomizePaused] = useState(false);
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (isCustomizePaused) return;
-    if (customizeGallery.length <= 1) return;
-
-    const id = window.setInterval(() => {
-      setCustomizeActiveIndex((prev) => (prev + 1) % customizeGallery.length);
-    }, 3000);
-
-    return () => window.clearInterval(id);
-  }, [customizeGallery.length, isCustomizePaused]);
-
-  useEffect(() => {
-    const track = customizeTrackRef.current;
-    if (!track) return;
-
-    const items = Array.from(track.querySelectorAll<HTMLElement>('[data-customize-slide="true"]'));
-    const target = items[customizeActiveIndex];
-    if (!target) return;
-
-    track.scrollTo({ left: target.offsetLeft - 8, behavior: 'smooth' });
-  }, [customizeActiveIndex]);
-
-  const goCustomizePrev = () => {
-    setCustomizeActiveIndex((prev) => (prev - 1 + customizeGallery.length) % customizeGallery.length);
-  };
-
-  const goCustomizeNext = () => {
-    setCustomizeActiveIndex((prev) => (prev + 1) % customizeGallery.length);
-  };
-
-  const customizeWhatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    'Hi! I want to order a Customized Cake.',
-  )}`;
+  const customizeGallery = homePageGallery.slice(0, 8);
 
   return (
     <section className={sectionClassName}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {categories.map((category, index) => {
-            const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-              `Hi! I want to order ${category.name}.`,
-            )}`;
-
-            return (
+          {categories.map((category, index) => (
               <motion.div
                 key={category.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -160,64 +116,59 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
                 whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(123, 78, 45, 0.18)' }}
                 className={cardClassName}
               >
-                <div className={iconWrapClassName}>
+                <a
+                  href={shopUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={iconWrapClassName}
+                  aria-label={`Order ${category.name}`}
+                >
                   <ImageWithFallback src={category.image} alt={category.name} className="h-full w-full object-cover" loading="lazy" />
-                </div>
+                </a>
                 <h3 className="font-semibold text-card-foreground">{category.name}</h3>
                 <a
-                  href={whatsappHref}
+                  href={shopUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={orderButtonClassName}
-                  onClick={(e) => e.stopPropagation()}
                 >
-                  <MessageSquare className="h-4 w-4" />
-                  Order on WhatsApp
+                  Order Now
                 </a>
               </motion.div>
-            );
-          })}
+          ))}
         </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-3xl border border-white/30 bg-[linear-gradient(135deg,#ffd200_0%,#f7a532_20%,#f06b52_42%,#e13384_66%,#b432c7_84%,#6d31df_100%)] p-6 shadow-[0_30px_70px_rgba(96,36,120,0.22)] md:p-8">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.28),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]" />
+        <div className="relative mt-10 overflow-hidden rounded-3xl border border-[#ead8d0] bg-[linear-gradient(135deg,#fbf6f2_0%,#f8ece9_36%,#f5e9f0_68%,#fff8ee_100%)] p-6 shadow-[0_30px_70px_rgba(90,52,34,0.12)] md:p-8">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(150,2,139,0.12),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(254,218,117,0.18),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.05))]" />
 
           <div className="relative flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs font-semibold tracking-[0.24em] text-white/80">CUSTOMIZED CAKES</p>
-              <h3 className="mt-2 text-3xl font-semibold leading-tight text-white">Make it personal</h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/78">
+              <p className="text-xs font-semibold tracking-[0.24em] text-[#96028b]">CUSTOMIZED CAKES</p>
+              <h3 className="mt-2 text-3xl font-semibold leading-tight text-[#302b28]">Make it personal</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#5f5650]">
                 Share your theme, photo, and weight — we’ll craft it exactly the way you want.
               </p>
             </div>
             <a
-              href={customizeWhatsappHref}
+              href={shopUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/35 bg-white/16 px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(65,18,82,0.18)] backdrop-blur-sm transition-all duration-200 hover:bg-white/24 md:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#96028b]/25 bg-white/75 px-5 py-3 text-sm font-semibold text-[#3f3b37] shadow-[0_12px_30px_rgba(150,2,139,0.12)] backdrop-blur-sm transition-all duration-200 hover:bg-white md:w-auto"
             >
-              <MessageSquare className="h-4 w-4" />
-              Order Customized Cake
+              Order Now
             </a>
           </div>
 
-          {/* Images carousel */}
           <div className="relative mt-6">
-            <div
-              ref={customizeTrackRef}
-              className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              onMouseEnter={() => setIsCustomizePaused(true)}
-              onMouseLeave={() => setIsCustomizePaused(false)}
-              onTouchStart={() => setIsCustomizePaused(true)}
-              onTouchEnd={() => setIsCustomizePaused(false)}
-              onFocus={() => setIsCustomizePaused(true)}
-              onBlur={() => setIsCustomizePaused(false)}
-            >
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {customizeGallery.map((src) => (
-                <div
+                <a
                   key={src}
-                  data-customize-slide="true"
-                  className="group relative aspect-[3/4] w-60 shrink-0 snap-start overflow-hidden rounded-3xl bg-white/18 shadow-[0_20px_40px_rgba(25,12,40,0.22)] ring-1 ring-white/30 backdrop-blur-[2px]"
+                  href={shopUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-white/75 shadow-[0_16px_34px_rgba(90,52,34,0.12)] ring-1 ring-[#ead8d0] backdrop-blur-[2px]"
+                  aria-label="Order customized cake"
                 >
                   <ImageWithFallback
                     src={src}
@@ -225,51 +176,9 @@ export function CategorySection({ variant = 'default' }: CategorySectionProps) {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     loading="lazy"
                   />
-                </div>
+                </a>
               ))}
             </div>
-
-            {customizeGallery.length > 1 ? (
-              <div className="mt-6 flex items-center justify-between gap-4 px-5">
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={goCustomizePrev}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/35 bg-white/18 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/28"
-                    aria-label="Previous customized cake"
-                  >
-                    <ChevronLeft className="h-5 w-5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={goCustomizeNext}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/35 bg-white/18 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/28"
-                    aria-label="Next customized cake"
-                  >
-                    <ChevronRight className="h-5 w-5" />
-                  </button>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  {customizeGallery.slice(0, Math.min(7, customizeGallery.length)).map((_, i) => {
-                    const page = customizeActiveIndex % Math.min(7, customizeGallery.length);
-                    const isActive = i === page;
-                    return (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => setCustomizeActiveIndex(i)}
-                        className={[
-                          'h-2 rounded-full transition-all duration-300',
-                          isActive ? 'w-4 bg-white' : 'w-2 bg-white/38 hover:bg-white/58',
-                        ].join(' ')}
-                        aria-label={`Go to slide ${i + 1}`}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>

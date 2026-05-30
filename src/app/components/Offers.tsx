@@ -14,7 +14,7 @@ export function Offers() {
       title: '50% OFF',
       subtitle: 'Mega Sale',
       description: 'On premium cakes and gourmet pastries',
-      color: 'from-amber-500 to-yellow-500',
+      color: 'from-fuchsia-700 to-purple-700',
       link: '#',
     },
     {
@@ -23,7 +23,7 @@ export function Offers() {
       title: '20% OFF',
       subtitle: 'First Order',
       description: 'For new customers on first ever order',
-      color: 'from-orange-500 to-amber-500',
+      color: 'from-purple-700 to-fuchsia-500',
       link: '#',
     },
     {
@@ -32,7 +32,7 @@ export function Offers() {
       title: 'Special Pricing',
       subtitle: 'Bulk Orders',
       description: 'For corporate events and parties',
-      color: 'from-yellow-500 to-orange-500',
+      color: 'from-fuchsia-500 to-purple-700',
       link: '#',
     },
   ];

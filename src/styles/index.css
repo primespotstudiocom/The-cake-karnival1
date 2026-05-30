@@ -4,8 +4,8 @@
 
 .instagram-section {
   background:
-    radial-gradient(34rem 22rem at 12% 8%, rgba(250, 126, 30, 0.08), transparent 68%),
-    radial-gradient(28rem 20rem at 88% 18%, rgba(244, 166, 65, 0.08), transparent 70%),
+    radial-gradient(34rem 22rem at 12% 8%, rgba(150, 2, 139, 0.08), transparent 68%),
+    radial-gradient(28rem 20rem at 88% 18%, rgba(182, 51, 169, 0.08), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(250, 247, 241, 0.92));
 }
 

@@ -1,4 +1,4 @@
-﻿import { NavLink } from 'react-router';
+import { NavLink } from 'react-router';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
@@ -47,7 +47,7 @@ export function Footer() {
             <div className="mb-6 space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
-                <span>123, MG Road, Koregaon Park, Pune, Maharashtra - 411001</span>
+                <span>Vaishnavi Apartments, Khashaba Jadhav Path, Shriram Nagar, Dhankawadi, Pune, Maharashtra 411046</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
@@ -100,11 +100,11 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-[#FA7E1E]">
+            <a href="#" className="transition-colors hover:text-[#96028b]">
               Privacy Policy
             </a>
-            <span>•</span>
-            <a href="#" className="transition-colors hover:text-[#FA7E1E]">
+            <span>�</span>
+            <a href="#" className="transition-colors hover:text-[#96028b]">
               Terms of Service
             </a>
           </div>

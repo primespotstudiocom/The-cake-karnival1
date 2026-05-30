@@ -222,9 +222,9 @@ export function StoreLocatorPage() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-[12px] font-semibold tracking-widest text-[#FA7E1E] uppercase shadow-sm backdrop-blur">
+          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-[12px] font-semibold tracking-widest text-[#96028b] uppercase shadow-sm backdrop-blur">
             Find a store
-            <span className="inline-block size-1.5 rounded-full bg-[#FA7E1E]/70" />
+            <span className="inline-block size-1.5 rounded-full bg-[#96028b]/70" />
             Pune & nearby
           </div>
           <h1
@@ -245,7 +245,7 @@ export function StoreLocatorPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by area, store name, or phone..."
-              className="h-12 w-full rounded-2xl border border-black/10 bg-white/80 pl-10 pr-4 text-[14px] text-[#1f1f1f] shadow-sm backdrop-blur outline-none placeholder:text-[#8a8a8a] focus:border-[#FA7E1E]/50 focus:ring-4 focus:ring-[#FA7E1E]/15"
+              className="h-12 w-full rounded-2xl border border-black/10 bg-white/80 pl-10 pr-4 text-[14px] text-[#1f1f1f] shadow-sm backdrop-blur outline-none placeholder:text-[#8a8a8a] focus:border-[#96028b]/50 focus:ring-4 focus:ring-[#96028b]/15"
             />
           </div>
           <div className="flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-white/80 px-4 py-3 text-[13px] text-[#555] shadow-sm backdrop-blur sm:min-w-[210px] sm:justify-center">
@@ -265,12 +265,12 @@ export function StoreLocatorPage() {
               whileHover={{ y: -4 }}
               className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-black/10 bg-white/85 p-5 shadow-[0_10px_26px_rgba(10,10,10,0.06)] backdrop-blur transition-all hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(10,10,10,0.10)]"
             >
-              <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#FEDA75_0%,#FA7E1E_42%,#F4A641_100%)]" />
+              <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#e9d5ff_0%,#96028b_42%,#b633a9_100%)]" />
 
               <div className="mb-4 flex items-center justify-between gap-4">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#FA7E1E]/20 bg-[#FA7E1E]/10 px-3 py-1 text-[11px] font-semibold tracking-widest text-[#FA7E1E] uppercase">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#96028b]/20 bg-[#96028b]/10 px-3 py-1 text-[11px] font-semibold tracking-widest text-[#96028b] uppercase">
                   {store.badge}
-                  <span className="inline-block size-2 rounded-full bg-[#FA7E1E]/60" />
+                  <span className="inline-block size-2 rounded-full bg-[#96028b]/60" />
                 </div>
               </div>
 
@@ -282,7 +282,7 @@ export function StoreLocatorPage() {
 
               <div className="mt-4 space-y-4 text-[13px] text-[#6f6f6f]">
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-xl bg-[#FA7E1E]/10 text-[#FA7E1E]">
+                  <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-xl bg-[#96028b]/10 text-[#96028b]">
                     <MapPin className="size-4" />
                   </span>
                   <div>
@@ -323,7 +323,7 @@ export function StoreLocatorPage() {
                 <motion.a
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="sm:col-span-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#1f1f1f] px-3 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-[#FA7E1E] focus:outline-none focus:ring-4 focus:ring-[#FA7E1E]/20"
+                  className="sm:col-span-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#1f1f1f] px-3 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-[#96028b] focus:outline-none focus:ring-4 focus:ring-[#96028b]/20"
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(store.address)}`}
                   target="_blank"
                   rel="noreferrer"

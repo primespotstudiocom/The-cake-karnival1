@@ -1,4 +1,4 @@
-﻿import { motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from './ui/carousel';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -8,29 +8,29 @@ export function About() {
   const signatureCakes = useMemo(
     () => [
       {
-        title: 'Velvet Bloom',
-        note: 'Rich layers with silky cream and berry finish.',
-        image: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=1200&q=80',
+        title: 'Designer Cake',
+        note: 'Freshly crafted cake for birthdays and celebrations.',
+        image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg'),
       },
       {
-        title: 'Golden Crumb',
-        note: 'Classic sponge with smooth vanilla glaze.',
-        image: 'https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=1200&q=80',
+        title: 'Chocolate Delight',
+        note: 'Rich chocolate finish with a premium celebration look.',
+        image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg'),
       },
       {
-        title: 'Noir Truffle',
-        note: 'Dark chocolate indulgence for true cocoa lovers.',
-        image: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=1200&q=80',
+        title: 'Birthday Special',
+        note: 'Colorful custom cake made for memorable birthday moments.',
+        image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (1).jpeg'),
       },
       {
-        title: 'Citrus Mist',
-        note: 'Light sponge with fresh citrus cream accents.',
-        image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=1200&q=80',
+        title: 'Theme Cake',
+        note: 'Personalized theme cake with detailed decoration.',
+        image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM.jpeg'),
       },
       {
-        title: 'Ruby Crown',
-        note: 'Premium celebration cake with jewel-like topping.',
-        image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80',
+        title: 'Premium Creation',
+        note: 'Elegant cake design for parties, events, and gifts.',
+        image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.52 PM (1).jpeg'),
       },
     ],
     [],
@@ -81,23 +81,31 @@ export function About() {
 
             <div className="space-y-6 leading-relaxed text-[#7a7a7a]">
               <div className="border border-[#e6e6e6] bg-white p-6">
-                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">HOW STARTED</div>
-                <p>The Cake Carnival started with a vision to make premium cakes affordable and accessible for everyone.</p>
+                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#96028b]">HOW STARTED</div>
+                <p>Cake Carnival started with a simple dream—serving delicious, freshly made cakes from a home kitchen. As more people fell in love with the taste, the demand kept growing, turning a small homemade venture into a trusted cake brand.
+
+Today, Cake Carnival has expanded to 30+ franchise outlets across Pune, serving happiness to thousands of customers every day.</p>
+
+<p>As a proudly Marathi-founded brand, we are committed to helping new entrepreneurs start their own business through our proven franchise model. With complete support, training, and a strong brand presence, we make entrepreneurship easier for aspiring business owners.
+
+From home-made cakes to 30+ successful outlets—our journey is proof that great taste and big dreams can create something extraordinary.
+
+Join the Cake Carnival family and grow with us.</p>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="border border-[#e6e6e6] bg-white p-6">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">FOUNDER / CEO</div>
-                  <div className="font-semibold text-[#2a2a2a]">Add name</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#96028b]">FOUNDER / CEO</div>
+                  <div className="font-semibold text-[#2a2a2a]">Ajay Takawale & Madhura Takawale</div>
                 </div>
                 <div className="border border-[#e6e6e6] bg-white p-6">
-                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">OUTLETS</div>
-                  <div className="font-semibold text-[#2a2a2a]">30+ Franchise Stores</div>
+                  <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#96028b]">OUTLETS</div>
+                  <div className="font-semibold text-[#2a2a2a]">30+ Franchise Stores in Pune</div>
                 </div>
               </div>
 
               <div className="border border-[#e6e6e6] bg-white p-6">
-                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#FA7E1E]">VISION</div>
+                <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#96028b]">VISION</div>
                 <div className="font-semibold text-[#2a2a2a]">
                   To become Maharashtra's most loved cake brand with 30+ outlets.
                 </div>

@@ -28,7 +28,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <div className="mb-4 inline-block border border-[#f1dfc9] bg-white px-4 py-2 text-xs font-semibold tracking-[0.14em] text-[#FA7E1E]">
+          <div className="mb-4 inline-block border border-[#f1dfc9] bg-white px-4 py-2 text-xs font-semibold tracking-[0.14em] text-[#96028b]">
             GET IN TOUCH
           </div>
           <h2 className="mb-4 text-4xl font-semibold text-[#1f1f1f] sm:text-5xl" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -54,7 +54,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#FA7E1E] focus-visible:ring-[3px] focus-visible:ring-[#FA7E1E33]"
+                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#96028b] focus-visible:ring-[3px] focus-visible:ring-[#96028b33]"
                 />
               </div>
 
@@ -66,7 +66,7 @@ export function Contact() {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="Your phone number"
-                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#FA7E1E] focus-visible:ring-[3px] focus-visible:ring-[#FA7E1E33]"
+                  className="w-full border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#96028b] focus-visible:ring-[3px] focus-visible:ring-[#96028b33]"
                 />
               </div>
 
@@ -76,7 +76,7 @@ export function Contact() {
                   required
                   value={formData.productType}
                   onChange={(e) => setFormData({ ...formData, productType: e.target.value })}
-                  className="w-full appearance-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all focus-visible:border-[#FA7E1E] focus-visible:ring-[3px] focus-visible:ring-[#FA7E1E33]"
+                  className="w-full appearance-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all focus-visible:border-[#96028b] focus-visible:ring-[3px] focus-visible:ring-[#96028b33]"
                 >
                   <option value="">Select a Product</option>
                   <option value="Birthday Cake">Birthday Cake</option>
@@ -96,7 +96,7 @@ export function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Your order specifications..."
                   rows={4}
-                  className="w-full resize-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#FA7E1E] focus-visible:ring-[3px] focus-visible:ring-[#FA7E1E33]"
+                  className="w-full resize-none border border-[#dddddd] bg-[#fafafa] px-4 py-3 text-[#2d2d2d] outline-none transition-all placeholder:text-[#9a9a9a] focus-visible:border-[#96028b] focus-visible:ring-[3px] focus-visible:ring-[#96028b33]"
                 ></textarea>
               </div>
 
@@ -104,7 +104,7 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative isolate flex w-full items-center justify-center overflow-hidden rounded-2xl bg-[linear-gradient(90deg,#FEDA75_0%,#FA7E1E_42%,#F4A641_100%)] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white shadow-[0_14px_34px_rgba(250,126,30,0.24)] transition-all hover:shadow-[0_18px_44px_rgba(250,126,30,0.34)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FA7E1E]/25"
+                className="relative isolate flex w-full items-center justify-center overflow-hidden rounded-2xl bg-[linear-gradient(90deg,#e9d5ff_0%,#96028b_42%,#b633a9_100%)] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white shadow-[0_14px_34px_rgba(150,2,139,0.24)] transition-all hover:shadow-[0_18px_44px_rgba(150,2,139,0.34)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#96028b]/25"
               >
                 <span aria-hidden className="pointer-events-none absolute inset-0 opacity-80">
                   <span className="absolute left-6 top-3 size-1.5 rounded-full bg-white/80" />
@@ -134,21 +134,23 @@ export function Contact() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <MapPin className="h-6 w-6 text-[#FA7E1E]" />
+                    <MapPin className="h-6 w-6 text-[#96028b]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Address</div>
                     <div className="text-[#777]">
-                      123, MG Road, Koregaon Park, Pune,
+                      Vaishnavi Apartments, Khashaba Jadhav Path,
                       <br />
-                      Maharashtra - 411001
+                      Shriram Nagar, Dhankawadi, Pune,
+                      <br />
+                      Maharashtra 411046
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <Phone className="h-6 w-6 text-[#FA7E1E]" />
+                    <Phone className="h-6 w-6 text-[#96028b]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Phone</div>
@@ -158,7 +160,7 @@ export function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <Mail className="h-6 w-6 text-[#FA7E1E]" />
+                    <Mail className="h-6 w-6 text-[#96028b]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Email</div>
@@ -168,7 +170,7 @@ export function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#fff3f1]">
-                    <Clock className="h-6 w-6 text-[#FA7E1E]" />
+                    <Clock className="h-6 w-6 text-[#96028b]" />
                   </div>
                   <div>
                     <div className="mb-1 font-semibold text-[#2a2a2a]">Hours</div>
@@ -185,7 +187,7 @@ export function Contact() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.96 }}
-                  className="relative isolate w-full overflow-hidden rounded-2xl border border-[#FA7E1E]/25 bg-[linear-gradient(90deg,#FEDA75_0%,#FA7E1E_42%,#F4A641_100%)] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] shadow-[0_14px_34px_rgba(250,126,30,0.20)] transition-all hover:shadow-[0_18px_44px_rgba(250,126,30,0.30)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FA7E1E]/25"
+                  className="relative isolate w-full overflow-hidden rounded-2xl border border-[#96028b]/25 bg-[linear-gradient(90deg,#e9d5ff_0%,#96028b_42%,#b633a9_100%)] px-6 py-4 text-sm font-semibold tracking-[0.14em] text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] shadow-[0_14px_34px_rgba(150,2,139,0.20)] transition-all hover:shadow-[0_18px_44px_rgba(150,2,139,0.30)] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#96028b]/25"
                 >
                   <span aria-hidden className="pointer-events-none absolute inset-0 opacity-80">
                     <span className="absolute left-6 top-3 size-1.5 rounded-full bg-white/80" />

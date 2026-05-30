@@ -23,10 +23,10 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[linear-gradient(90deg,rgba(250,246,242,0.94)_0%,rgba(254,218,117,0.22)_18%,rgba(250,126,30,0.18)_42%,rgba(186,148,255,0.12)_100%)] backdrop-blur-md"
+      className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[linear-gradient(90deg,rgba(250,246,242,0.98)_0%,rgba(233,213,255,0.42)_42%,rgba(150,2,139,0.16)_100%)] backdrop-blur-md"
     >
-      <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 sm:py-3">
-        <div className="flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-x-8 lg:gap-x-12">
+      <div className="mx-auto h-16 max-w-7xl px-4 sm:h-20 sm:px-6 lg:h-24">
+        <div className="flex h-full items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-x-8 lg:gap-x-12">
           {/* Left Menu */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 justify-end">
             {leftItems.map((item) => (
@@ -55,7 +55,7 @@ export function Navbar() {
               <img
                 src="/logo.png"
                 alt="The Cake Carnival"
-                className="h-[3.75rem] w-auto object-contain sm:h-[4.5rem] md:h-[5.25rem] lg:h-[6rem]"
+                className="h-12 w-auto object-contain sm:h-16 lg:h-20"
               />
             </NavLink>
           </div>
@@ -65,7 +65,7 @@ export function Navbar() {
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen((open) => !open)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#e4d4ce] bg-white/85 text-foreground shadow-sm transition-colors hover:bg-white md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#e4d4ce] bg-white text-foreground shadow-sm transition-colors hover:bg-[#fff7ef] md:hidden"
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -94,7 +94,7 @@ export function Navbar() {
         </div>
 
         {isMobileMenuOpen ? (
-          <div className="mt-4 rounded-3xl border border-[#ead8d0] bg-[linear-gradient(135deg,rgba(250,246,242,0.96)_0%,rgba(254,218,117,0.24)_22%,rgba(250,126,30,0.18)_46%,rgba(186,148,255,0.12)_100%)] p-3 shadow-[0_18px_40px_rgba(25,16,10,0.08)] backdrop-blur md:hidden">
+          <div className="absolute left-4 right-4 top-full mt-3 rounded-3xl border border-[#e5d2e4] bg-[#fffaf7] p-3 shadow-[0_22px_60px_rgba(35,18,34,0.18)] ring-1 ring-white md:hidden">
             <div className="flex flex-col">
               {menuItems.map((item) => (
                 <NavLink
@@ -105,7 +105,7 @@ export function Navbar() {
                   className={({ isActive }) =>
                     [
                       'rounded-2xl px-4 py-3 text-sm font-semibold tracking-[0.12em] uppercase transition-colors',
-                      isActive ? 'bg-[#fff7ef] text-[#FA7E1E]' : 'text-foreground/80 hover:bg-[#fffaf4] hover:text-foreground',
+                      isActive ? 'bg-[#f3e3f1] text-[#96028b]' : 'text-[#3f3b37] hover:bg-[#f8edf6] hover:text-[#96028b]',
                     ].join(' ')
                   }
                 >

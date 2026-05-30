@@ -1,4 +1,4 @@
-﻿import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
@@ -154,7 +154,7 @@ export function ImageGrid() {
         <div className="instagram-card relative mb-10 overflow-hidden rounded-3xl border border-[#eedde8] px-6 py-8 sm:px-8">
           <div className="pointer-events-none absolute -left-12 -top-12 h-40 w-40 rounded-full bg-[#ffd8c8]/50 blur-3xl" />
           <div className="pointer-events-none absolute -right-16 -bottom-12 h-48 w-48 rounded-full bg-[#ffe8bc]/50 blur-3xl" />
-          <p className="relative text-xs font-semibold tracking-[0.2em] text-[#FA7E1E]">SHOWCASE GALLERY</p>
+          <p className="relative text-xs font-semibold tracking-[0.2em] text-[#96028b]">SHOWCASE GALLERY</p>
           <h2 className="relative mt-2 text-4xl font-semibold text-[#221f1d]">Browse Our Crafted Collection</h2>
           <p className="relative mt-2 max-w-2xl text-sm text-[#6f6662]">
             Hover any item to focus on it. Other images blur and the selected one pops in place for a smooth preview.
@@ -192,7 +192,7 @@ export function ImageGrid() {
                   className={[
                     'group relative overflow-hidden rounded-2xl border border-[#eadfd9] bg-white p-2 transition-all duration-300',
                     isActive ? 'z-20 shadow-[0_18px_34px_rgba(25,18,10,0.22)]' : 'shadow-[0_8px_20px_rgba(10,10,10,0.07)]',
-                    isDimmed ? 'blur-[2px] brightness-75 saturate-75' : '',
+                    isDimmed ? 'blur-[0.5px] brightness-90 saturate-90' : '',
                     isActive && hoveredIndex !== null ? 'opacity-25' : 'opacity-100',
                     tilePatterns[index % tilePatterns.length],
                   ].join(' ')}
@@ -231,7 +231,7 @@ export function ImageGrid() {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
               >
                 <motion.div
-                  className="absolute inset-0 rounded-3xl bg-black/20 backdrop-blur-[1.5px]"
+                  className="absolute inset-0 rounded-3xl bg-black/5 backdrop-blur-[0.25px]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}

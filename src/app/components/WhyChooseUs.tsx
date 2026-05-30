@@ -12,19 +12,19 @@ export function WhyChooseUs() {
       icon: Clock,
       title: 'Freshly Baked Daily',
       description: 'Every cake is baked completely fresh to ensure maximum softness and taste.',
-      gradient: 'from-amber-500 to-orange-500',
+      gradient: 'from-fuchsia-700 to-purple-700',
     },
     {
       icon: Award,
       title: 'Premium Quality',
       description: 'We source ingredients! Only the finest ingredients go into our creations.',
-      gradient: 'from-orange-500 to-yellow-500',
+      gradient: 'from-purple-700 to-fuchsia-500',
     },
     {
       icon: ThumbsUp,
       title: '100,000+ Happy Customers',
       description: 'Trusted by thousands across Pune for every joyful occasion.',
-      gradient: 'from-yellow-500 to-amber-500',
+      gradient: 'from-fuchsia-500 to-purple-700',
     },
     {
       icon: Truck,

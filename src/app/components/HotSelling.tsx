@@ -13,6 +13,8 @@ const fallbackProducts = [
   { id: 8, name: 'Ruby Velvet', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg') },
 ];
 
+const shopUrl = 'https://www.kwikza.com/shop/the-cake-carnival-katraj-pune';
+
 type HotSellingProps = {
   variant?: 'default' | 'glass';
 };
@@ -145,14 +147,18 @@ export function HotSelling({ variant = 'default' }: HotSellingProps) {
             transition={{ duration: 0.45, ease: 'easeOut' }}
           >
             {visibleProducts.map((product, index) => (
-              <motion.div
+              <motion.a
                 key={product.id}
+                href={shopUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 layout
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.04, duration: 0.45, ease: 'easeOut' }}
                 whileHover={{ y: -6 }}
                 className="group mx-auto w-full max-w-[240px] cursor-pointer"
+                aria-label={`Order ${product.name}`}
               >
                 <div className="aspect-square overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(20,20,20,0.08)] ring-1 ring-black/5">
                   <ImageWithFallback
@@ -167,7 +173,7 @@ export function HotSelling({ variant = 'default' }: HotSellingProps) {
                     Freshly baked and beautifully crafted for every celebration.
                   </p>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </motion.div>
         </AnimatePresence>
