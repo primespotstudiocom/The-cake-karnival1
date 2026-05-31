@@ -6,15 +6,27 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 const deals = [
   {
     id: 1,
-    name: 'Sweet Cakes',
-    description: 'Things You Need To Know There are many variations of...',
+    name: 'Vanilla Cream Cupcake',
+    description: 'Soft vanilla cupcake topped with fresh cream and sweet sprinkles.',
     image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 2,
-    name: 'Spider Cupcakes',
-    description: 'Things You Need To Know There are many variations of...',
+    name: 'Oreo Chocolate Cupcakes',
+    description: 'Chocolate cupcakes finished with cream frosting and Oreo crunch.',
     image: 'https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 3,
+    name: 'Chocolate Layer Pastry',
+    description: 'Layered chocolate pastry with smooth cream and rich cocoa glaze.',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (1).jpeg'),
+  },
+  {
+    id: 4,
+    name: 'Chocolate Truffle Pastry',
+    description: 'Moist chocolate pastry topped with glossy truffle cream.',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM.jpeg'),
   },
 ];
 
@@ -81,7 +93,7 @@ export function Testimonials({ variant = 'default' }: TestimonialsProps) {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center"
         >
-          <h2 className="text-[33px] font-semibold tracking-[0.08em] text-[#1f1f1f] md:text-[38px]">DEALS OF THE DAY</h2>
+          <h2 className="text-[33px] font-semibold tracking-[0.08em] text-[#1f1f1f] md:text-[38px]">PASTRIES OF THE DAY</h2>
           <div className="mx-auto mt-3 h-px w-20 bg-[#cfcfcf]" />
         </motion.div>
 

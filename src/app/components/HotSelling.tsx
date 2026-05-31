@@ -3,14 +3,14 @@ import { useEffect, useMemo, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const fallbackProducts = [
-  { id: 1, name: 'Hazelnut Praline', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM (1).jpeg') },
-  { id: 2, name: 'Dark Choco Slice', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg') },
-  { id: 3, name: 'Classic Cupcake', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg') },
-  { id: 4, name: 'Berry Cheesecake', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg') },
-  { id: 5, name: 'Creamy Tart', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (3).jpeg') },
-  { id: 6, name: 'Fruit Burst', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM.jpeg') },
-  { id: 7, name: 'Glaze Donut', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM (1).jpeg') },
-  { id: 8, name: 'Ruby Velvet', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg') },
+  { id: 1, name: 'Vanila pinapple', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM (1).jpeg') },
+  { id: 2, name: 'Red Velvet Heart Cake', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg') },
+  { id: 3, name: 'Vanila kulfi faluda', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg') },
+  { id: 4, name: 'Chocolate  Double Truffle', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg') },
+  { id: 5, name: 'Chocolate Layer Pastry', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (3).jpeg') },
+  { id: 6, name: 'German chocolate', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM.jpeg') },
+  { id: 7, name: 'Chocolate Truffle Pastry', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM (1).jpeg') },
+  { id: 8, name: 'Pistachio Delight Cake', image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg') },
 ];
 
 const shopUrl = 'https://www.kwikza.com/shop/the-cake-carnival-katraj-pune';

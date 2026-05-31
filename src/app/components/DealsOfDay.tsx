@@ -7,15 +7,39 @@ const shopUrl = 'https://www.kwikza.com/shop/the-cake-carnival-katraj-pune';
 const deals = [
   {
     id: 1,
-    name: 'Sweet Cakes',
-    description: 'Freshly crafted cakes for birthdays, events, and sweet cravings.',
+    name: 'Vanilla Cream Cupcake',
+    description: 'Soft vanilla cupcake topped with fresh cream and sweet sprinkles.',
     image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg'),
   },
   {
     id: 2,
-    name: 'Spider Cupcakes',
-    description: 'Beautiful custom cake designs made fresh for every celebration.',
+    name: 'Oreo Chocolate Cupcakes',
+    description: 'Chocolate cupcakes finished with cream frosting and Oreo crunch.',
     image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (1).jpeg'),
+  },
+  {
+    id: 3,
+    name: 'Red Velvet Heart Cake',
+    description: 'Rich red velvet cake finished with a smooth creamy frosting.',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg'),
+  },
+  {
+    id: 4,
+    name: 'Chocolate Truffle Cake',
+    description: 'Decadent chocolate layers baked fresh for every sweet moment.',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg'),
+  },
+  {
+    id: 3,
+    name: 'Chocolate Layer Pastry',
+    description: 'Layered chocolate pastry with smooth cream and rich cocoa glaze.',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM.jpeg'),
+  },
+  {
+    id: 4,
+    name: 'Chocolate Truffle Pastry',
+    description: 'Moist chocolate pastry topped with glossy truffle cream.',
+    image: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.52 PM (1).jpeg'),
   },
 ];
 
@@ -30,7 +54,7 @@ export function DealsOfDay() {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center"
         >
-          <h2 className="text-[33px] font-semibold tracking-[0.08em] text-[#1f1f1f] md:text-[38px]">DEALS OF THE DAY</h2>
+          <h2 className="text-[33px] font-semibold tracking-[0.08em] text-[#1f1f1f] md:text-[38px]">PASTRIES OF THE DAY</h2>
           <div className="mx-auto mt-3 h-px w-20 bg-[#cfcfcf]" />
         </motion.div>
 

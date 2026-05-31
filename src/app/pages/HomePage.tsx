@@ -2,7 +2,6 @@ import { HeroVideo } from '../components/HeroVideo';
 import { CategorySection } from '../components/CategorySection';
 import { HotSelling } from '../components/HotSelling';
 import { Testimonials } from '../components/Testimonials';
-import { DealsOfDay } from '../components/DealsOfDay';
 
 export function HomePage() {
   return (
@@ -17,7 +16,6 @@ export function HomePage() {
           <CategorySection variant="glass" />
           <HotSelling variant="glass" />
           <Testimonials variant="glass" />
-          <DealsOfDay />
         </div>
       </div>
     </>
