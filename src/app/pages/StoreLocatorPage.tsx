@@ -145,14 +145,14 @@ export function StoreLocatorPage() {
       phone: '8055789905',
       photosUrl: 'https://share.google/oZJHVYxeyWma49d9g',
     },
-    {
-      badge: 'FRANCHISE LOCATION',
-      name: 'The Cake Carnival ',//chinchwad
-      address:
-        'PremSagar Society, S no 185, nr. PCMC auditorium, Shridharnagar, Chinchwad, Pune, Pimpri-Chinchwad, Maharashtra 411033',
-      phone: '7038340153',
-      photosUrl: 'https://share.google/38HHYgH2wgEtb7Xtl',
-    },
+    // {
+    //   badge: 'FRANCHISE LOCATION',
+    //   name: 'The Cake Carnival ',//chinchwad
+    //   address:
+    //     'PremSagar Society, S no 185, nr. PCMC auditorium, Shridharnagar, Chinchwad, Pune, Pimpri-Chinchwad, Maharashtra 411033',
+    //   phone: '7038340153',
+    //   photosUrl: 'https://share.google/38HHYgH2wgEtb7Xtl',
+    // },
     {
       badge: 'FRANCHISE LOCATION',
       name: 'The Cake Carnival ',//deccan
