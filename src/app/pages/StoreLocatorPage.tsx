@@ -9,21 +9,21 @@ export function StoreLocatorPage() {
   const stores = [
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival Bharati vidhypeeth',
+      name: 'The Cake Carnival ', //Bharati vidhypeeth
       address: 'Bharati vidhypeeth, Pune',
       phone: '9009003867',
       photosUrl: 'https://share.google/jETGHMqv3E9anFV2e',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (SAMVIT ENTPRIZES)',
+      name: 'The Cake Carnival',// (SAMVIT ENTPRIZES)
       address: 'Shop no. 2, opp. Prabhat sweets, nda road. Amedkar chawk, warje',
       phone: '9049765848',
       photosUrl: 'https://share.google/evJAhS6rBnc7HN0cB',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (JAMBHULWADI RD)',
+      name: 'The Cake Carnival ',//(JAMBHULWADI RD)
       address:
         'Shop no. 7, chintamani srushti, near lipane vasi, beside lipane landmark, jambhulwadi road, ambegaon (kh)',
       phone: '8380888674',
@@ -31,77 +31,77 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (AMBEGAON)',
+      name: 'The Cake Carnival ',//(AMBEGAON)
       address: 'Shop no. 1 near bhairavnath emple ambegaon(kh)',
       phone: '9673366537',
       photosUrl: 'https://share.google/kgNrYx5yzAV99bxku',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (SUKHSAGAR)',
+      name: 'The Cake Carnival ',//(SUKHSAGAR)
       address: 'Shop 6 balaji garden, front of ambika sweet, sukhsagar nagar',
       phone: '9881499245',
       photosUrl: 'https://share.google/rd6jvMPvD3kKdBHHD',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (KIRKITWADI)',
+      name: 'The Cake Carnival',// (KIRKITWADI)
       address: 'Shop no 4, amruta vihar kirkitwadi, sinhgad road',
       phone: '9604885800',
       photosUrl: 'https://share.google/JI8oL2rL6tsomsp3O',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (BANER)',
+      name: 'The Cake Carnival ',//(BANER)
       address: 'Baner mhalunge road, 120/1/1, ganraj chowk, near zudio showroom, baner,',
       phone: '7038340153',
       photosUrl: 'https://share.google/4fpznDIVZrkzIVGrZ',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (GUJARWADI)',
+      name: 'The Cake Carnival ',//(GUJARWADI)
       address: 'Suvarna heights, warkhade nagar chauk gujarwadi road, katraj pune',
       phone: '9284695668',
       photosUrl: 'https://share.google/Heu55Sj1TfLmUUqdf',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (WADGAON)',
+      name: 'The Cake Carnival ',//(WADGAON)
       address: 'Shop no. 2, sr.no. 51, wadgaon (bk), dangat patil market point, pune 411041',
       phone: '9049765848',
       photosUrl: 'https://share.google/C6Qved9vl6I5u7uJ4',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (DHAYARI)',
+      name: 'The Cake Carnival ',//(DHAYARI)
       address: 'Sr.n 18, dhayari road, rayakarnagar, opp murali hotel, pune',
       phone: '8888381866',
       photosUrl: 'https://share.google/HaW2Fq2tN0kwpLOOs',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival sinhgad road',
+      name: 'The Cake Carnival',//sinhgad road
       address: 'Shop no 2, sabian app. Near shivarushti, ambegaon bk.',
       phone: '9130891689',
       photosUrl: 'https://share.google/7By0yRArMowWyfyw7',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival KOTHRUD',
+      name: 'The Cake Carnival',// KOTHRUD
       address: 'Sr. No.19/1b, varun complex, shop no. 5, near medico medical near karishma soc. Kothrud',
-      phone: '9604199557',
+      phone: '9822230648',
       photosUrl: 'https://share.google/OQ9rNdfKKLjJkznHH',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival KONDHWA',
+      name: 'The Cake Carnival ',//KONDHWA
       address: 'Shop no8, nirman square, kamathe patil nagar, yewalewadi',
       phone: '9881499245',
       photosUrl: 'https://share.google/exuY3Z4KbfKAv6NKz',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival NARAYAN PETH',
+      name: 'The Cake Carnival',// NARAYAN PETH
       address:
         'Shop no 4, snehdeep apt. Back to narayanpeth police chowki, near vijay maruti mandal, pune',
       phone: '7972631615',
@@ -109,14 +109,14 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival Narhe',
+      name: 'The Cake Carnival ',//Narhe
       address: 'Shree concrol chowk , Audumber Complex narhe',
-      phone: '9049765848',
+      phone: '7776847366',
       photosUrl: 'https://share.google/H5Y5eHsYcHvssIlQE',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival SHIVANE',
+      name: 'The Cake Carnival ',//SHIVANE
       address:
         'CHANDRASHEELA COMPLEX, SHOP NO 2, SR NO 13/2, MORE PETROL PUMP , JAWAL NDA ROAD SHIVANE HAWELI PUNE 411023',
       phone: '8010146930',
@@ -124,14 +124,14 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival (DSK)',
+      name: 'The Cake Carnival ',// (DSK)
       address: 'shop no-8, Vasudha A building, DSK Vishwa, Pune, Maharashtra 411041',
       phone: '9881863686',
       photosUrl: 'https://share.google/HeCqBqpZfuEplqf5l',
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival bhosari',
+      name: 'The Cake Carnival ',//bhosari
       address:
         'Jai Maharashtra Chowk, near Rubab Collection, Ramnagar, Bhosari, Pimpri-Chinchwad, Maharashtra 411039',
       phone: '9689445566',
@@ -139,7 +139,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival gangadham',
+      name: 'The Cake Carnival ',//gangadham
       address:
         'SHOP.NO.3, PART A, S.NO 580/2, CHOWK, next to BALAJI TRADERS, Hamal Nagar, Gaganvihar, Gangadham Phase II, Ganga Dham, Pune, Maharashtra 411037',
       phone: '8055789905',
@@ -147,7 +147,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival chinchwad',
+      name: 'The Cake Carnival ',//chinchwad
       address:
         'PremSagar Society, S no 185, nr. PCMC auditorium, Shridharnagar, Chinchwad, Pune, Pimpri-Chinchwad, Maharashtra 411033',
       phone: '7038340153',
@@ -155,7 +155,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival deccan',
+      name: 'The Cake Carnival ',//deccan
       address:
         'Shop No 725/B, More Niwas, Khandoji Baba Chowk, opposite Central Bank of India, Pulachi Wadi, Deccan Gymkhana, Pune, Maharashtra 411004',
       phone: '8999648392',
@@ -163,7 +163,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival aranyashwar',
+      name: 'The Cake Carnival ',//aranyashwar
       address:
         'Shop no 2, shivsagar apartment, in front of ARANYESHWAR PARK, phase 2, Parvati Paytha, Pune, Maharashtra 411009',
       phone: '8983855999',
@@ -171,7 +171,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival punwale',
+      name: 'The Cake Carnival ',//punwale
       address:
         'The Cake Carnival, society, Gaikwad Nagar Rd, beside Madhav Mithas, in front of Legacy Millennia - C, Punawale, Pune, Pimpri-Chinchwad, Maharashtra 411033',
       phone: '9970733756',
@@ -179,7 +179,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival ravet',
+      name: 'The Cake Carnival ',//ravet
       address:
         'The cake carnival, Akash avenue, Pipeline Rd, in front of silver oak society, Shinde Vasti, Ravet, Pune, Pimpri-Chinchwad, Maharashtra 412101',
       phone: '9970733756',
@@ -187,7 +187,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival wakad',
+      name: 'The Cake Carnival ',//wakad
       address:
         'Shop No-1, GogekarHight, opposite to APOSTROPHEExit Gate, Yamuna Nagar, Shankar Kalat Nagar, Wakad, Pimpri-Chinchwad, Maharashtra 411057',
       phone: '9665122353',
@@ -195,7 +195,7 @@ export function StoreLocatorPage() {
     },
     {
       badge: 'FRANCHISE LOCATION',
-      name: 'Cake Carnival Moshi',
+      name: 'The Cake Carnival ',//Moshi
       address:
         'Shop number 13, A17, River Residency Rd, Jadhav Wadi, Chikhali, Moshi, Pimpri-Chinchwad, Maharashtra 411062',
       phone: '8007176770',
