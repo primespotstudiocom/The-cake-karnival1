@@ -1,263 +1,227 @@
-import { AnimatePresence, motion } from 'motion/react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from './ui/dialog';
 
-const fallbackProducts = [
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM (1).jpeg'),
-    title: 'Customized Cake 01',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM.jpeg'),
-    title: 'Customized Cake 02',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg'),
-    title: 'Customized Cake 03',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg'),
-    title: 'Customized Cake 04',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (3).jpeg'),
-    title: 'Customized Cake 05',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM.jpeg'),
-    title: 'Customized Cake 06',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM (1).jpeg'),
-    title: 'Customized Cake 07',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg'),
-    title: 'Customized Cake 08',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (1).jpeg'),
-    title: 'Customized Cake 09',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (2).jpeg'),
-    title: 'Customized Cake 10',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM.jpeg'),
-    title: 'Customized Cake 11',
-    tag: 'Custom',
-  },
-  {
-    src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM (1).jpeg'),
-    title: 'Customized Cake 12',
-    tag: 'Custom',
-  },
-];
+interface ProductCardProps {
+  src: string;
+  title?: string;
+}
 
-const tilePatterns = [
-  'row-span-3 sm:col-span-1 sm:row-span-3 lg:col-span-3 lg:row-span-5',
-  'row-span-2 sm:col-span-1 sm:row-span-2 lg:col-span-2 lg:row-span-3',
-  'row-span-3 sm:col-span-2 sm:row-span-3 lg:col-span-4 lg:row-span-4',
-  'row-span-2 sm:col-span-1 sm:row-span-2 lg:col-span-3 lg:row-span-3',
-  'row-span-3 sm:col-span-1 sm:row-span-3 lg:col-span-2 lg:row-span-5',
-  'row-span-2 sm:col-span-2 sm:row-span-2 lg:col-span-3 lg:row-span-3',
-  'row-span-3 sm:col-span-1 sm:row-span-3 lg:col-span-4 lg:row-span-4',
-  'row-span-2 sm:col-span-1 sm:row-span-2 lg:col-span-2 lg:row-span-3',
-  'row-span-3 sm:col-span-2 sm:row-span-3 lg:col-span-3 lg:row-span-4',
-];
-
-export function ImageGrid() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const tileRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [popupRect, setPopupRect] = useState<{ top: number; left: number; width: number; height: number } | null>(null);
-  const [products, setProducts] = useState(fallbackProducts);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const controller = new AbortController();
-
-    (async () => {
-      try {
-        const res = await fetch(`/customize/manifest.json?v=${Date.now()}`, { signal: controller.signal });
-        if (!res.ok) return;
-
-        const data = (await res.json()) as { images?: unknown };
-        if (!Array.isArray(data.images)) return;
-
-        const images = data.images.filter((img): img is string => typeof img === 'string');
-        if (!images.length) return;
-
-        setProducts(
-          images.map((src, index) => ({
-            src,
-            title: `Customized Cake ${String(index + 1).padStart(2, '0')}`,
-            tag: 'Custom',
-          })),
-        );
-      } catch {
-        // Keep fallback products if manifest loading fails.
-      }
-    })();
-
-    return () => controller.abort();
-  }, []);
-
-  const hoveredProduct = useMemo(
-    () => (hoveredIndex !== null ? products[hoveredIndex] : null),
-    [hoveredIndex],
-  );
-
-  const updatePopupRect = (index: number) => {
-    const container = containerRef.current;
-    const tile = tileRefs.current[index];
-    if (!container || !tile) return;
-
-    const containerBox = container.getBoundingClientRect();
-    const tileBox = tile.getBoundingClientRect();
-
-    setPopupRect({
-      top: tileBox.top - containerBox.top,
-      left: tileBox.left - containerBox.left,
-      width: tileBox.width,
-      height: tileBox.height,
-    });
-  };
-
-  useEffect(() => {
-    if (hoveredIndex === null) return;
-
-    const handle = () => updatePopupRect(hoveredIndex);
-    window.addEventListener('resize', handle, { passive: true });
-    window.addEventListener('scroll', handle, { passive: true });
-    return () => {
-      window.removeEventListener('resize', handle);
-      window.removeEventListener('scroll', handle);
-    };
-  }, [hoveredIndex]);
+function ProductCard({ src, title }: ProductCardProps) {
+  const [open, setOpen] = useState(false);
 
   return (
-    <section id="photo-gallery" className="instagram-section pb-16 pt-6 sm:pt-8 lg:pb-20">
+    <div className="group flex flex-col items-center">
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <button className="relative w-full overflow-hidden rounded-2xl border border-[#ebdce6] bg-white p-2.5 shadow-[0_8px_20px_rgba(25,16,10,0.04)] cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#cf2aa6]">
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#faf7f5]">
+              <ImageWithFallback
+                src={src}
+                alt={title || 'Handcrafted cake design from The Cake Carnival'}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          </button>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-xl p-0 overflow-hidden bg-white/95 border-none shadow-2xl rounded-2xl max-w-[calc(100%-2rem)] flex flex-col">
+          <DialogTitle className="sr-only">{title || 'Product Image'}</DialogTitle>
+          <DialogDescription className="sr-only">
+            View full size product image.
+          </DialogDescription>
+          <div className="relative w-full overflow-hidden bg-[#faf7f5]">
+            <img
+              src={src}
+              alt={title || 'Product Image'}
+              className="w-full h-auto max-h-[80vh] object-contain mx-auto"
+            />
+          </div>
+          {title && (
+            <div className="bg-white px-6 py-4 border-t border-[#f3e9f1] text-center">
+              <h4 className="text-xl font-bold text-[#1f1f1f]">{title}</h4>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+      {title && (
+        <h3 className="mt-3 text-sm font-semibold leading-snug text-center text-[#1f1f1f] group-hover:text-[#cf2aa6] transition-colors duration-300">
+          {title}
+        </h3>
+      )}
+    </div>
+  );
+}
+
+interface CategoryHeaderProps {
+  title: string;
+}
+
+function CategoryHeader({ title }: CategoryHeaderProps) {
+  return (
+    <div className="w-full py-3 mb-8 rounded-xl border border-[#ebd2e6]/70 bg-gradient-to-r from-[#fff0fb] via-[#fcd7f5] to-[#fff0fb] shadow-[0_4px_16px_rgba(150,2,139,0.02)]">
+      <h2 className="text-center text-lg font-bold tracking-[0.18em] text-[#1f1f1f] sm:text-xl uppercase">
+        {title}
+      </h2>
+    </div>
+  );
+}
+
+export function ImageGrid() {
+  const cakes = [
+    {
+      title: 'Red Velvet Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (1).jpeg'),
+    },
+    {
+      title: 'Pineapple Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.47 PM (1).jpeg'),
+    },
+    {
+      title: 'Vanilla Kulfi Falooda Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (2).jpeg'),
+    },
+    {
+      title: 'Rasmalai Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM (2).jpeg'),
+    },
+    {
+      title: 'Chocolate Double Truffle Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.48 PM (3).jpeg'),
+    },
+    {
+      title: 'Chocolate Layer Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM (1).jpeg'),
+    },
+    {
+      title: 'Chocolate Delight Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.49 PM.jpeg'),
+    },
+    {
+      title: 'Butterscotch Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM (1).jpeg'),
+    },
+    {
+      title: 'Rossomalai Truffle Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.50 PM.jpeg'),
+    },
+    {
+      title: 'German Chocolate Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM.jpeg'),
+    },
+    {
+      title: 'Coconut Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM (2).jpeg'),
+    },
+    {
+      title: 'Chocolate Truffle Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.52 PM.jpeg'),
+    },
+    {
+      title: 'Blueberry Cheese Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.52 PM (1).jpeg'),
+    },
+    {
+      title: 'Choco chip Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.52 PM (2).jpeg'),
+    },
+    {
+      title: 'Choco Lava Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.53 PM.jpeg'),
+    },
+    {
+      title: 'Red Velvet Bento Cake',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.53 PM (1).jpeg'),
+    },
+  ];
+
+  const pastries = [
+    {
+      title: 'Gulkand Pastry',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.56 PM (2).jpeg'),
+    },
+    {
+      title: 'Rasmalai Pastry',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.54 PM (1).jpeg'),
+    },
+    {
+      title: 'Truffle Pastry',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.52 PM (1).jpeg'),
+    },
+    {
+      title: 'Black Forest Pastry',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.54 PM (2).jpeg'),
+    },
+    {
+      title: 'Chocolate shorts',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.53 PM.jpeg'),
+    },
+    {
+      title: 'Pastry',
+      src: encodeURI('/customize/WhatsApp Image 2026-04-27 at 11.01.51 PM (2).jpeg'),
+    },
+  ];
+
+  const customCakes = [
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.31 PM.jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.32 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.35 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.37 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.39 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.41 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.43 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.45 PM (1).jpeg'),
+    encodeURI('/home-page/WhatsApp Image 2026-04-30 at 2.50.49 PM (1).jpeg'),
+  ];
+
+  return (
+    <section id="photo-gallery" className="instagram-section pb-24 pt-6 sm:pt-8">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="instagram-card relative mb-10 overflow-hidden rounded-3xl border border-[#eedde8] px-6 py-8 sm:px-8">
+        {/* Showcase Gallery Header */}
+        <div className="instagram-card relative mb-12 overflow-hidden rounded-3xl border border-[#eedde8] px-6 py-8 sm:px-8">
           <div className="pointer-events-none absolute -left-12 -top-12 h-40 w-40 rounded-full bg-[#ffd8c8]/50 blur-3xl" />
           <div className="pointer-events-none absolute -right-16 -bottom-12 h-48 w-48 rounded-full bg-[#ffe8bc]/50 blur-3xl" />
           <p className="relative text-xs font-semibold tracking-[0.2em] text-[#96028b]">SHOWCASE GALLERY</p>
           <h2 className="relative mt-2 text-4xl font-semibold text-[#221f1d]">Browse Our Crafted Collection</h2>
           <p className="relative mt-2 max-w-2xl text-sm text-[#6f6662]">
-            Hover any item to focus on it. Other images blur and the selected one pops in place for a smooth preview.
+            Here are some of our signatures, handcrafted cakes, pastries, and customized designs.
           </p>
         </div>
 
-        <div
-          ref={containerRef}
-          className="relative"
-          onMouseLeave={() => {
-            setHoveredIndex(null);
-            setPopupRect(null);
-          }}
-        >
-          <div
-            className={[
-              'grid auto-rows-[96px] grid-cols-1 gap-4 transition-all duration-300 sm:grid-cols-2 sm:auto-rows-[88px] sm:gap-5 lg:grid-cols-12 lg:auto-rows-[62px]',
-              hoveredIndex !== null ? 'scale-[0.995]' : 'scale-100',
-            ].join(' ')}
-          >
-            {products.map((item, index) => {
-              const isActive = hoveredIndex === index;
-              const isDimmed = hoveredIndex !== null && hoveredIndex !== index;
-
-              return (
-                <div
-                  key={`${item.title}-${index}`}
-                  ref={(node) => {
-                    tileRefs.current[index] = node;
-                  }}
-                  onMouseEnter={() => {
-                    setHoveredIndex(index);
-                    updatePopupRect(index);
-                  }}
-                  className={[
-                    'group relative overflow-hidden rounded-2xl border border-[#eadfd9] bg-white p-2 transition-all duration-300',
-                    isActive ? 'z-20 shadow-[0_18px_34px_rgba(25,18,10,0.22)]' : 'shadow-[0_8px_20px_rgba(10,10,10,0.07)]',
-                    isDimmed ? 'blur-[0.5px] brightness-90 saturate-90' : '',
-                    isActive && hoveredIndex !== null ? 'opacity-25' : 'opacity-100',
-                    tilePatterns[index % tilePatterns.length],
-                  ].join(' ')}
-                >
-                  <div className="relative h-full w-full overflow-hidden rounded-xl bg-[#faf7f5]">
-                    <ImageWithFallback
-                      src={item.src}
-                      alt={item.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-                      loading="lazy"
-                    />
-
-                    <div
-                      className={[
-                        'absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent p-3 text-white transition-all duration-300',
-                        isDimmed ? 'opacity-55' : 'opacity-100',
-                      ].join(' ')}
-                    >
-                      <div className="inline-flex rounded-full border border-white/45 bg-black/30 px-2.5 py-1 text-[10px] font-semibold tracking-[0.16em]">
-                        {item.tag}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+        {/* Cakes Section */}
+        <div className="mb-16">
+          <CategoryHeader title="Cakes" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {cakes.map((cake) => (
+              <ProductCard key={cake.title} src={cake.src} title={cake.title} />
+            ))}
           </div>
+        </div>
 
-          <AnimatePresence>
-            {hoveredProduct && popupRect && (
-              <motion.div
-                className="pointer-events-none absolute inset-0 z-40"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-              >
-                <motion.div
-                  className="absolute inset-0 rounded-3xl bg-black/5 backdrop-blur-[0.25px]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                />
+        {/* Pastry Section */}
+        <div className="mb-16">
+          <CategoryHeader title="Pastry" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {pastries.map((pastry) => (
+              <ProductCard key={pastry.title} src={pastry.src} title={pastry.title} />
+            ))}
+          </div>
+        </div>
 
-                <motion.div
-                  key={hoveredProduct.src}
-                  className="absolute z-10 overflow-hidden rounded-3xl border border-[#f2ddd2] bg-white shadow-[0_30px_70px_rgba(20,12,8,0.35)]"
-                  style={popupRect}
-                  initial={{ opacity: 0, scale: 0.92 }}
-                  animate={{ opacity: 1, scale: 1.06 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.35, ease: 'easeOut' }}
-                >
-                  <div className="relative h-full w-full overflow-hidden">
-                    <ImageWithFallback src={hoveredProduct.src} alt={hoveredProduct.title} className="h-full w-full object-cover" />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent p-4 text-white">
-                      <div className="inline-flex rounded-full border border-white/40 bg-black/30 px-2.5 py-1 text-[11px] font-semibold tracking-[0.16em]">
-                        {hoveredProduct.tag}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+        {/* Customized Cakes Section */}
+        <div>
+          <CategoryHeader title="Customized Cakes" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {customCakes.map((src, index) => (
+              <ProductCard key={index} src={src} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
